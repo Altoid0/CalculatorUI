@@ -98,7 +98,7 @@ public class CalculatorUI extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 418, 315);
 		getContentPane().setLayout(null);
-		calcArea.setForeground(Color.BLACK);
+		calcArea.setForeground(Color.WHITE);
 		calcArea.setFont(new Font("Lucida Grande", Font.PLAIN, 72));
 		calcArea.setHorizontalAlignment(SwingConstants.RIGHT);
 		calcArea.setBounds(18, 6, 377, 67);
@@ -188,7 +188,7 @@ public class CalculatorUI extends JFrame {
 			}
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				button_5.setBackground(Color.PINK);
+				button_5.setBackground(new Color(74, 232, 203));
 			}
 		});
 		button_5.addActionListener(e -> updateCalcArea(button_5.getText()));
@@ -207,7 +207,7 @@ public class CalculatorUI extends JFrame {
 			}
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				button_6.setBackground(Color.PINK);
+				button_6.setBackground(new Color(74, 232, 203));
 			}
 		});
 		button_6.addActionListener(e -> updateCalcArea(button_6.getText()));
@@ -226,7 +226,7 @@ public class CalculatorUI extends JFrame {
 			}
 			
 			public void mouseReleased(MouseEvent e) {
-				button_7.setBackground(Color.PINK);
+				button_7.setBackground(new Color(74, 232, 203));
 			}
 		});
 		button_7.addActionListener(e -> updateCalcArea(button_7.getText()));
@@ -244,9 +244,7 @@ public class CalculatorUI extends JFrame {
 				button_8.setBackground(Color.PINK);
 			}
 			@Override
-			public void mouseReleased(MouseEvent e) {
-				button_8.setBackground(Color.PINK);
-			}
+			public void mouseReleased(MouseEvent e) { button_8.setBackground(new Color(74, 232, 203)); }
 		});
 		button_8.addActionListener(e -> updateCalcArea(button_8.getText()));
 		button_8.setOpaque(true);
@@ -264,7 +262,7 @@ public class CalculatorUI extends JFrame {
 			}
 			
 			public void mouseReleased(MouseEvent e) {
-				button_9.setBackground(Color.PINK);
+				button_9.setBackground(new Color(74, 232, 203));
 			}
 		});
 		button_9.addActionListener(e -> updateCalcArea(button_9.getText()));
@@ -283,7 +281,7 @@ public class CalculatorUI extends JFrame {
 			}
 			
 			public void mouseReleased(MouseEvent e) {
-				button_0.setBackground(Color.PINK);
+				button_0.setBackground(new Color(74, 232, 203));
 			}
 		});
 		button_0.addActionListener(e -> updateCalcArea(button_0.getText()));
