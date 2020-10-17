@@ -131,7 +131,7 @@ public class CalculatorUI extends JFrame {
 			}
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				button_2.setBackground(Color.PINK);
+				button_2.setBackground(new Color(74, 232, 203));
 			}
 		});
 		button_2.addActionListener(e -> updateCalcArea(button_2.getText()));
@@ -169,7 +169,7 @@ public class CalculatorUI extends JFrame {
 			}
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				button_4.setBackground(Color.PINK);
+				button_4.setBackground(new Color(74, 232, 203));
 			}
 		});
 		button_4.addActionListener(e -> updateCalcArea(button_4.getText()));
@@ -302,7 +302,7 @@ public class CalculatorUI extends JFrame {
 			}
 			
 			public void mouseReleased(MouseEvent e) {
-				button_plus.setBackground(Color.PINK);
+				button_plus.setBackground(new Color(74, 232, 203));
 			}
 		});
 		button_plus.addActionListener(e -> {
@@ -324,7 +324,7 @@ public class CalculatorUI extends JFrame {
 			}
 			
 			public void mouseReleased(MouseEvent e) {
-				button_minus.setBackground(Color.PINK);
+				button_minus.setBackground(new Color(74, 232, 203));
 			}
 		});
 		button_minus.addActionListener(e -> {
@@ -346,7 +346,7 @@ public class CalculatorUI extends JFrame {
 			}
 
 			public void mouseReleased(MouseEvent e) {
-				button_multiply.setBackground(Color.PINK);
+				button_multiply.setBackground(new Color(74, 232, 203));
 			}
 		});
 		button_multiply.addActionListener(e -> {
@@ -369,7 +369,7 @@ public class CalculatorUI extends JFrame {
 			}
 
 			public void mouseReleased(MouseEvent e) {
-				button_divide.setBackground(Color.PINK);
+				button_divide.setBackground(new Color(74, 232, 203));
 			}
 		});
 		button_divide.addActionListener(e -> {
@@ -391,7 +391,7 @@ public class CalculatorUI extends JFrame {
 			}
 			
 			public void mouseReleased(MouseEvent e) {
-				button_equals.setBackground(Color.PINK);
+				button_equals.setBackground(new Color(74, 232, 203));
 			}
 		});
 		button_equals.addActionListener(e -> {
@@ -415,7 +415,7 @@ public class CalculatorUI extends JFrame {
 			}
 			
 			public void mouseReleased(MouseEvent e) {
-				button_clear.setBackground(Color.PINK);
+				button_clear.setBackground(new Color(74, 232, 203));
 			}
 		});
 		button_clear.addActionListener(e -> clearCalculator());
