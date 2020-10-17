@@ -12,7 +12,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.border.MatteBorder;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import util.Math.OPERATOR;
+import util.MathCalc.OPERATOR;
+
 
 public class CalculatorUI extends JFrame {
 	private final JLabel calcArea = new JLabel("");
@@ -43,7 +44,7 @@ public class CalculatorUI extends JFrame {
 	
 	private void calculateAnswer()  // method to perform calculation
 	{
-	    calcAnswer = util.Math.calculateIt(arg1, mathOp, arg2);
+	    calcAnswer = util.MathCalc.calculateIt(arg1, mathOp, arg2);
 		calcArea.setText(String.valueOf(calcAnswer));
 	    arg1 = Double.parseDouble(calcArea.getText());
 	    mathState = STATE.CALC;
@@ -380,6 +381,29 @@ public class CalculatorUI extends JFrame {
 		button_divide.setBackground(new Color(74, 232, 203));
 		button_divide.setBounds(327, 294, 75, 40);
 		getContentPane().add(button_divide);
+
+
+		JButton button_modulus = new JButton("%");
+		button_modulus.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				button_modulus.setBackground(Color.WHITE);
+			}
+
+			public void mouseReleased(MouseEvent e) {
+				button_modulus.setBackground(new Color(74, 232, 203));
+			}
+		});
+		button_modulus.addActionListener(e -> {
+			saveValueOfArg1();
+			saveValueOfMathOp(OPERATOR.MODULUS);
+		});
+		button_modulus.setOpaque(true);
+		button_modulus.setForeground(Color.BLACK);
+		button_modulus.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
+		button_modulus.setBackground(new Color(74, 232, 203));
+		button_modulus.setBounds(327, 346, 75, 40);
+		getContentPane().add(button_modulus);
 		
 		JButton button_equals = new JButton("=");
 		button_equals.addMouseListener(new MouseAdapter() {
@@ -400,7 +424,7 @@ public class CalculatorUI extends JFrame {
 		button_equals.setForeground(Color.BLACK);
 		button_equals.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
 		button_equals.setBackground(new Color(74, 232, 203));
-		button_equals.setBounds(327, 346, 75, 40);
+		button_equals.setBounds(327, 398, 75, 40);
 		getContentPane().add(button_equals);
 
 

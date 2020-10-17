@@ -1,11 +1,11 @@
 package util;
-
-public class Math {
+import java.lang.Math;
+public class MathCalc {
 	
-	public static enum OPERATOR { NOOP, PLUS, MINUS, DIVIDE, MULTIPLY };
+	public static enum OPERATOR { NOOP, PLUS, MINUS, DIVIDE, MULTIPLY, MODULUS, EXPONENT };
 	public static double calculateIt(double arg1, OPERATOR mathOp, double arg2) {
-		
-		double calcAnswer;		
+
+		double calcAnswer;
 		switch(mathOp)
 	    {
 	        case PLUS:
@@ -20,6 +20,12 @@ public class Math {
 	        case MULTIPLY:
 	            calcAnswer = arg1 * arg2;
 	            break;
+			case MODULUS:
+				calcAnswer = arg1 % arg2;
+				break;
+			case EXPONENT:
+				calcAnswer = Math.pow(arg1,arg2);
+				break;
 	        case NOOP:
 	        default:	
 	            calcAnswer = arg1;
