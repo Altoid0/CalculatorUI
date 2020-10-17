@@ -96,7 +96,7 @@ public class CalculatorUI extends JFrame {
 	public CalculatorUI() {
 		getContentPane().setBackground(new Color(51, 49, 47));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 418, 315);
+		setBounds(100, 100, 450, 470);
 		getContentPane().setLayout(null);
 		calcArea.setForeground(Color.WHITE);
 		calcArea.setFont(new Font("Lucida Grande", Font.PLAIN, 72));
