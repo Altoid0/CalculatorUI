@@ -1,4 +1,4 @@
-package view_control;
+package view;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
@@ -7,12 +7,10 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import javax.swing.border.MatteBorder;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import util.MathCalc.OPERATOR;
+import control.MathCalc.OPERATOR;
 
 
 public class CalculatorUI extends JFrame {
@@ -44,7 +42,7 @@ public class CalculatorUI extends JFrame {
 	
 	private void calculateAnswer()  // method to perform calculation
 	{
-	    calcAnswer = util.MathCalc.calculateIt(arg1, mathOp, arg2);
+	    calcAnswer = control.MathCalc.calculateIt(arg1, mathOp, arg2);
 		calcArea.setText(String.valueOf(calcAnswer));
 	    arg1 = Double.parseDouble(calcArea.getText());
 	    mathState = STATE.CALC;
@@ -443,6 +441,7 @@ public class CalculatorUI extends JFrame {
 		button_equals.addActionListener(e -> {
 			saveValueOfArg2();
 			calculateAnswer();
+			//label1.settext = Calculate().answer
 		});
 		button_equals.setOpaque(true);
 		button_equals.setForeground(Color.BLACK);

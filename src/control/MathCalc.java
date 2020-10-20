@@ -1,4 +1,4 @@
-package util;
+package control;
 import java.lang.Math;
 public class MathCalc {
 	
