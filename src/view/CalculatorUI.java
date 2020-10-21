@@ -48,7 +48,7 @@ public class CalculatorUI extends JFrame {
 	    mathState = STATE.CALC;
 		initialCalcAreaInputState = true;
 	}
-	
+
 	private void updateCalcArea(String string) {
 		if (initialCalcAreaInputState) {  // sets text to string on initial key typed
 			calcArea.setText(string);
@@ -98,7 +98,7 @@ public class CalculatorUI extends JFrame {
 		setBounds(100, 100, 450, 470);
 		getContentPane().setLayout(null);
 		calcArea.setForeground(Color.WHITE);
-		calcArea.setFont(new Font("Impact", Font.PLAIN, 72));
+		calcArea.setFont (new Font("Impact", Font.PLAIN, 72));
 		calcArea.setHorizontalAlignment(SwingConstants.RIGHT);
 		calcArea.setBounds(18, 6, 377, 67);
 		getContentPane().add(calcArea);
