@@ -11,6 +11,7 @@ import javax.swing.border.MatteBorder;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import control.MathCalc.OPERATOR;
+import model.CalculatorModel;
 
 
 public class CalculatorUI extends JFrame {
@@ -42,9 +43,12 @@ public class CalculatorUI extends JFrame {
 	
 	private void calculateAnswer()  // method to perform calculation
 	{
-	    calcAnswer = control.MathCalc.calculateIt(arg1, mathOp, arg2);
+	    // calcAnswer = control.MathCalc.calculateIt(arg1, mathOp, arg2);
+		CalculatorModel answer = new CalculatorModel(arg1, mathOp, arg2);
+		calcAnswer = answer.calcAnswerModel;
 		calcArea.setText(String.valueOf(calcAnswer));
-	    arg1 = Double.parseDouble(calcArea.getText());
+	    // arg1 = Double.parseDouble(calcArea.getText());
+		arg1 = calcAnswer;
 	    mathState = STATE.CALC;
 		initialCalcAreaInputState = true;
 	}
