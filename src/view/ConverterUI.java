@@ -92,12 +92,16 @@ public class ConverterUI extends JFrame {
         convertButton.setForeground(Color.WHITE);
         convertButton.setBackground(new Color(60, 174, 163));
         convertButton.addActionListener(e -> {
-            celsiusInput = Double.parseDouble((celsiusTextField.getText()));
-            double fOutput = celsiusInput*(9/5)+32;
-            String faOutput = String.valueOf(fOutput);
 
-            farOutput.setText(faOutput);
+            if (celsiusTextField.getText().equals("")) {
+                farOutput.setText("Fahrenheit");
+            } else {
+                celsiusInput = Double.parseDouble((celsiusTextField.getText()));
+                double fOutput = celsiusInput*(9/5)+32;
+                String faOutput = String.valueOf(fOutput);
 
+                farOutput.setText(faOutput);
+            }
 
         });
         convertButton.setBounds(25, 170, 377, 67);
