@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.MatteBorder;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import control.MathCalc.OPERATOR;
@@ -44,6 +46,20 @@ public class ConverterUI extends JFrame {
         celsiusTextField.setBounds(18, 6, 377, 67);
          getContentPane().add(celsiusTextField);
 
+        celsiusTextField.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                celsiusTextField.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                celsiusTextField.setFont(new Font("Impact", Font.PLAIN, 30));
+                celsiusTextField.setText("Enter your email here:");
+            }
+        });
+
+
         JLabel instrux = new JLabel("Enter Celsius input above");
         instrux.setFont(new Font("Impact", Font.PLAIN, 18));
         instrux.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -51,6 +67,7 @@ public class ConverterUI extends JFrame {
         getContentPane().add(instrux);
 
         JButton convertButton = new JButton("Convert");
+
         convertButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
