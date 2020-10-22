@@ -57,28 +57,28 @@ public class MainMenu extends JFrame {
         JMenu mnSuite = new JMenu("Suite");
         menuBar.add(mnSuite);
 
-//        JMenuItem mntmPreferences = new JMenuItem("Temperature Convertor");
-//        mnHone.add(mntmPreferences);
-//
-//        JMenu mnApTest = new JMenu("Physics Solver");
-//        menuBar.add(mnApTest);
-//
-//        JMenuItem mntmApReview = new JMenuItem("Review");
-//        mntmApReview.addActionListener(e -> {
-//            AP_UI frame = new AP_UI();
-//            frame.setVisible(true);
-//        });
-//        mnApTest.add(mntmApReview);
-//
-//        JMenu mnJig = new JMenu("Labs");
-//        menuBar.add(mnJig);
+        JMenuItem mntmPreferences = new JMenuItem("Temperature Convertor");
+        mnHone.add(mntmPreferences);
+
+        JMenu mnApTest = new JMenu("Physics Solver");
+        menuBar.add(mnApTest);
+
+        JMenuItem mntmApReview = new JMenuItem("Review");
+        mntmApReview.addActionListener(e -> {
+            AP_UI frame = new AP_UI();
+            frame.setVisible(true);
+        });
+        mnApTest.add(mntmApReview);
+
+        JMenu mnJig = new JMenu("Labs");
+        menuBar.add(mnJig);
 
         JMenuItem mntmCalculator = new JMenuItem("Scientific Calculator");
         mntmCalculator.addActionListener(e -> {
             CalculatorUI frame = new CalculatorUI();
             frame.setVisible(true);
         });
-        mnSuite.add(mntmCalculator);
+        mnJig.add(mntmCalculator);
 
         JMenuItem mntmPhysicsSolve = new JMenuItem("Physics Solver");
         mntmPhysicsSolve.addActionListener(e -> {
@@ -87,7 +87,7 @@ public class MainMenu extends JFrame {
         });
 
         JMenuItem mntmTempConv = new JMenuItem("Temperature Convertor");
-        mntmTempConv.addActionListener(e -> {
+        mntmPalindrome.addActionListener(e -> {
             PalindromeUI frame = new PalindromeUI();
             frame.setVisible(true);
         });
