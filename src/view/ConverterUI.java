@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.MatteBorder;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import control.MathCalc.OPERATOR;
@@ -52,6 +54,20 @@ public class ConverterUI extends JFrame {
         farOutput.setForeground(Color.WHITE);
         getContentPane().add(farOutput);
 
+        celsiusTextField.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                celsiusTextField.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                celsiusTextField.setFont(new Font("Impact", Font.PLAIN, 30));
+                celsiusTextField.setText("Enter your email here:");
+            }
+        });
+
+
         JLabel instrux = new JLabel("Enter Celsius input above");
         instrux.setFont(new Font("Impact", Font.PLAIN, 18));
         instrux.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -59,7 +75,8 @@ public class ConverterUI extends JFrame {
         getContentPane().add(instrux);
 
         JButton convertButton = new JButton("Convert");
-        convertButton.addMouseListener(new MouseAdapter() {
+
+       /* convertButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
                 convertButton.setBackground(Color.PINK);
@@ -68,7 +85,7 @@ public class ConverterUI extends JFrame {
             public void mouseReleased(MouseEvent e) {
                 convertButton.setBackground(new Color(60, 174, 163));
             }
-        });
+        }); */
         convertButton.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
         convertButton.setFont(new Font("Impact", Font.PLAIN, 50));
         convertButton.setOpaque(true);
