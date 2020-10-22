@@ -1,3 +1,4 @@
+
 package view;
 
 import java.awt.Color;
@@ -80,19 +81,19 @@ public class MainMenu extends JFrame {
         });
         mnSuite.add(mntmCalculator);
 
-        JMenuItem mntmPhysicsSolve = new JMenuItem("Physics Solver");
+     /*   JMenuItem mntmPhysicsSolve = new JMenuItem("Physics Solver");
         mntmPhysicsSolve.addActionListener(e -> {
             MethodSearchUI frame = new MethodSearchUI();
             frame.setVisible(true);
-        });
+        });*/
 
         JMenuItem mntmTempConv = new JMenuItem("Temperature Convertor");
         mntmTempConv.addActionListener(e -> {
-            PalindromeUI frame = new PalindromeUI();
+            ConverterUI frame = new ConverterUI();
             frame.setVisible(true);
         });
         mnSuite.add(mntmTempConv);
-        mnSuite.add(mntmPhysicsSolve);
+      //  mnSuite.add(mntmPhysicsSolve);
 
 //        JMenuItem mntmProgrammingLanguages = new JMenuItem("Model Search");
 //        mntmProgrammingLanguages.addActionListener(e -> {
@@ -105,4 +106,5 @@ public class MainMenu extends JFrame {
     }
 
 }
-}
+
+
