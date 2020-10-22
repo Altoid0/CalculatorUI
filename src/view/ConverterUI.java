@@ -22,6 +22,7 @@ public class ConverterUI extends JFrame {
     private JLabel celsiusLabel;
     private JButton convertButton;
     private JLabel fahrenheitLabel;
+    private double celsiusInput;
 
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
@@ -43,8 +44,15 @@ public class ConverterUI extends JFrame {
         JTextField celsiusTextField = new JTextField("");
         celsiusTextField.setFont(new Font("Impact", Font.PLAIN, 72));
         celsiusTextField.setHorizontalAlignment(SwingConstants.RIGHT);
-        celsiusTextField.setBounds(18, 6, 377, 67);
+        celsiusTextField.setBounds(25, 22, 377, 67);
          getContentPane().add(celsiusTextField);
+
+        JLabel farOutput = new JLabel("Fahrenheit");
+        farOutput.setFont(new Font("Impact", Font.PLAIN, 72));
+        farOutput.setHorizontalAlignment(SwingConstants.CENTER);
+        farOutput.setBounds(25, 300, 377, 67);
+        farOutput.setForeground(Color.WHITE);
+        getContentPane().add(farOutput);
 
         celsiusTextField.addFocusListener(new FocusListener() {
             @Override
@@ -79,13 +87,20 @@ public class ConverterUI extends JFrame {
             }
         });
         convertButton.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
+        convertButton.setFont(new Font("Impact", Font.PLAIN, 50));
         convertButton.setOpaque(true);
-        convertButton.setForeground(Color.BLACK);
+        convertButton.setForeground(Color.WHITE);
         convertButton.setBackground(new Color(60, 174, 163));
         convertButton.addActionListener(e -> {
+            celsiusInput = Double.parseDouble((celsiusTextField.getText()));
+            double fOutput = celsiusInput*(9/5)+32;
+            String faOutput = String.valueOf(fOutput);
+
+            farOutput.setText(faOutput);
+
 
         });
-        convertButton.setBounds(175, 200, 75, 40);
+        convertButton.setBounds(25, 170, 377, 67);
         getContentPane().add(convertButton);
 
     }
