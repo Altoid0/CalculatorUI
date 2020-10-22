@@ -38,10 +38,17 @@ public class ConverterUI extends JFrame {
         setBounds(100, 100, 450, 470);
         getContentPane().setLayout(null);
 
-        //     celsiusTextField.setFont(new Font("Impact", Font.PLAIN, 72));
-//        celsiusTextField.setHorizontalAlignment(SwingConstants.RIGHT);
-        //celsiusTextField.setBounds(18, 6, 377, 67);
-        // getContentPane().add(celsiusTextField);
+        JTextField celsiusTextField = new JTextField("");
+        celsiusTextField.setFont(new Font("Impact", Font.PLAIN, 72));
+        celsiusTextField.setHorizontalAlignment(SwingConstants.RIGHT);
+        celsiusTextField.setBounds(18, 6, 377, 67);
+         getContentPane().add(celsiusTextField);
+
+        JLabel instrux = new JLabel("Enter Celsius input above");
+        instrux.setFont(new Font("Impact", Font.PLAIN, 18));
+        instrux.setHorizontalAlignment(SwingConstants.RIGHT);
+        instrux.setBounds(18, 100, 377, 67);
+        getContentPane().add(instrux);
 
         JButton convertButton = new JButton("Convert");
         convertButton.addMouseListener(new MouseAdapter() {
@@ -58,8 +65,10 @@ public class ConverterUI extends JFrame {
         convertButton.setOpaque(true);
         convertButton.setForeground(Color.BLACK);
         convertButton.setBackground(new Color(60, 174, 163));
-        // convertButton.addActionListener(e -> updateCalcArea(convertButton.getText()));
-        convertButton.setBounds(35, 138, 75, 40);
+        convertButton.addActionListener(e -> {
+
+        });
+        convertButton.setBounds(175, 200, 75, 40);
         getContentPane().add(convertButton);
 
     }

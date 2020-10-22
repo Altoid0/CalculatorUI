@@ -1,3 +1,4 @@
+
 package view;
 
 import java.awt.Color;
@@ -57,42 +58,42 @@ public class MainMenu extends JFrame {
         JMenu mnSuite = new JMenu("Suite");
         menuBar.add(mnSuite);
 
-        JMenuItem mntmPreferences = new JMenuItem("Temperature Convertor");
-        mnHone.add(mntmPreferences);
-
-        JMenu mnApTest = new JMenu("Physics Solver");
-        menuBar.add(mnApTest);
-
-        JMenuItem mntmApReview = new JMenuItem("Review");
-        mntmApReview.addActionListener(e -> {
-            AP_UI frame = new AP_UI();
-            frame.setVisible(true);
-        });
-        mnApTest.add(mntmApReview);
-
-        JMenu mnJig = new JMenu("Labs");
-        menuBar.add(mnJig);
+//        JMenuItem mntmPreferences = new JMenuItem("Temperature Convertor");
+//        mnHone.add(mntmPreferences);
+//
+//        JMenu mnApTest = new JMenu("Physics Solver");
+//        menuBar.add(mnApTest);
+//
+//        JMenuItem mntmApReview = new JMenuItem("Review");
+//        mntmApReview.addActionListener(e -> {
+//            AP_UI frame = new AP_UI();
+//            frame.setVisible(true);
+//        });
+//        mnApTest.add(mntmApReview);
+//
+//        JMenu mnJig = new JMenu("Labs");
+//        menuBar.add(mnJig);
 
         JMenuItem mntmCalculator = new JMenuItem("Scientific Calculator");
         mntmCalculator.addActionListener(e -> {
             CalculatorUI frame = new CalculatorUI();
             frame.setVisible(true);
         });
-        mnJig.add(mntmCalculator);
+        mnSuite.add(mntmCalculator);
 
-        JMenuItem mntmPhysicsSolve = new JMenuItem("Physics Solver");
+     /*   JMenuItem mntmPhysicsSolve = new JMenuItem("Physics Solver");
         mntmPhysicsSolve.addActionListener(e -> {
             MethodSearchUI frame = new MethodSearchUI();
             frame.setVisible(true);
-        });
+        });*/
 
         JMenuItem mntmTempConv = new JMenuItem("Temperature Convertor");
-        mntmPalindrome.addActionListener(e -> {
-            PalindromeUI frame = new PalindromeUI();
+        mntmTempConv.addActionListener(e -> {
+            ConverterUI frame = new ConverterUI();
             frame.setVisible(true);
         });
         mnSuite.add(mntmTempConv);
-        mnSuite.add(mntmPhysicsSolve);
+      //  mnSuite.add(mntmPhysicsSolve);
 
 //        JMenuItem mntmProgrammingLanguages = new JMenuItem("Model Search");
 //        mntmProgrammingLanguages.addActionListener(e -> {
@@ -105,4 +106,5 @@ public class MainMenu extends JFrame {
     }
 
 }
-}
+
+
