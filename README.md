@@ -9,6 +9,14 @@ Dhruv Kanetkar | 5/5 | Added main menu logic and object calling for oth the conv
 Tanay Shah | 5/5 | I abstracted the model component of the project from the CalculatorUI file and made it it's own file so that it could easily talk to the control field and report to the UI in the form of an object. Worked with Dhruv S in figuring out how to make the main menu bar. 
 Dhruv Sengupta | 5/5 | I added the GUI to converter and worked with everyone to center the label text. Applied Tanay's business logic code and added it to the button. Managed all the positions for the UI items in all of the GUI's. Worked with Tanay on the main menu bar by analyzing the code that was given to us to draw parallels between the projects and implement the parts that applied. 
 
+## How to run our code?
+Prerequisites: 
+- [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html)
+- IntelliJ
+
+You will need to pull out code down and view it in IntelliJ. Follow this document for instructions on how to run out code: [Code Instructions](https://docs.google.com/document/d/1yZMZCIHzIUx_sKJ-uUAaJKMJXkuuMoprFAGDZGbFyNE/edit?usp=sharing)
+
+
 ## Calculator Functions
 We have created two main sub-projects in our CalculatorUI: 
 - Scientific Calculator  
