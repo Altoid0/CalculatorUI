@@ -1,4 +1,6 @@
+// Tanay Shah
 package model;
+// Import control OPERATOR Enum
 import control.MathCalc.OPERATOR;
 
 // Declare calculator model class
