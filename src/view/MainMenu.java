@@ -39,41 +39,22 @@ public class MainMenu extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
 
-//        // JLabel with image
-//        JLabel pic = new JLabel("");
-//        java.awt.Image image = new ImageIcon("APCompSci.jpeg").getImage();
-//        pic.setIcon(new ImageIcon(image));
-//        pic.setBounds(377, 111, 128, 128);
-
-        // Content Panel to add Label and Image
-        //https://docs.oracle.com/javase/tutorial/uiswing/components/rootpane.html
+        // Content Panel to add Label
         Container content = getContentPane();
         content.setBackground(new Color(100,100,255));
-//        content.add(pic);
 
         // Menu Objects
+        // Tanay and Dhruv S
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
+        // Added Dropdown Button for Suite
+        // Tanay and Dhruv S
         JMenu mnSuite = new JMenu("Suite");
         menuBar.add(mnSuite);
 
-//        JMenuItem mntmPreferences = new JMenuItem("Temperature Convertor");
-//        mnHone.add(mntmPreferences);
-//
-//        JMenu mnApTest = new JMenu("Physics Solver");
-//        menuBar.add(mnApTest);
-//
-//        JMenuItem mntmApReview = new JMenuItem("Review");
-//        mntmApReview.addActionListener(e -> {
-//            AP_UI frame = new AP_UI();
-//            frame.setVisible(true);
-//        });
-//        mnApTest.add(mntmApReview);
-//
-//        JMenu mnJig = new JMenu("Labs");
-//        menuBar.add(mnJig);
-
+        // Created Scientific Selector Button that creates new CalculatorUI object
+        // Tanay and Dhruv S
         JMenuItem mntmCalculator = new JMenuItem("Scientific Calculator");
         mntmCalculator.addActionListener(e -> {
             CalculatorUI frame = new CalculatorUI();
@@ -81,26 +62,16 @@ public class MainMenu extends JFrame {
         });
         mnSuite.add(mntmCalculator);
 
-     /*   JMenuItem mntmPhysicsSolve = new JMenuItem("Physics Solver");
-        mntmPhysicsSolve.addActionListener(e -> {
-            MethodSearchUI frame = new MethodSearchUI();
-            frame.setVisible(true);
-        });*/
-
+        // Created Temperature Converter Selector Button that creates new ConverterUI object
+        // Tanay and Dhruv S
         JMenuItem mntmTempConv = new JMenuItem("Temperature Convertor");
         mntmTempConv.addActionListener(e -> {
             ConverterUI frame = new ConverterUI();
             frame.setVisible(true);
         });
         mnSuite.add(mntmTempConv);
-      //  mnSuite.add(mntmPhysicsSolve);
+      //  mnSuite.add(mntmPhysicsSolve);  <-- place holder for eventual physics solver feature
 
-//        JMenuItem mntmProgrammingLanguages = new JMenuItem("Model Search");
-//        mntmProgrammingLanguages.addActionListener(e -> {
-//            ProgLang_UI frame = new ProgLang_UI();
-//            frame.setVisible(true);
-//        });
-//        mnJig.add(mntmProgrammingLanguages);
 
 
     }
