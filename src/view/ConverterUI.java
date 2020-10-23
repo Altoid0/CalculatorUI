@@ -17,7 +17,6 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import control.MathCalc.OPERATOR;
 
 //starts frame
 
@@ -44,6 +43,7 @@ public class ConverterUI extends JFrame {
     }
 
     //components of application
+    // Tanay and Dhruv S
     public ConverterUI() {
         //sets up bounds for windows
         getContentPane().setBackground(new Color(51, 49, 47));

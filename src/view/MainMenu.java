@@ -44,14 +44,17 @@ public class MainMenu extends JFrame {
         content.setBackground(new Color(100,100,255));
 
         // Menu Objects
+        // Tanay and Dhruv S
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
         // Added Dropdown Button for Suite
+        // Tanay and Dhruv S
         JMenu mnSuite = new JMenu("Suite");
         menuBar.add(mnSuite);
 
         // Created Scientific Selector Button that creates new CalculatorUI object
+        // Tanay and Dhruv S
         JMenuItem mntmCalculator = new JMenuItem("Scientific Calculator");
         mntmCalculator.addActionListener(e -> {
             CalculatorUI frame = new CalculatorUI();
@@ -60,6 +63,7 @@ public class MainMenu extends JFrame {
         mnSuite.add(mntmCalculator);
 
         // Created Temperature Converter Selector Button that creates new ConverterUI object
+        // Tanay and Dhruv S
         JMenuItem mntmTempConv = new JMenuItem("Temperature Convertor");
         mntmTempConv.addActionListener(e -> {
             ConverterUI frame = new ConverterUI();
