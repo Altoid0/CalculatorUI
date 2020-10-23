@@ -106,7 +106,5 @@ public class ConverterUI extends JFrame {
         });
         convertButton.setBounds(25, 170, 377, 67);
         getContentPane().add(convertButton);
-
     }
-
 }

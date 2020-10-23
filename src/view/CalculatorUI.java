@@ -430,7 +430,31 @@ public class CalculatorUI extends JFrame {
 		button_exponent.setBounds(209, 86, 75, 40);
 		getContentPane().add(button_exponent);
 
-		
+		JButton button_log = new JButton("log");
+		button_log.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				button_log.setBackground(Color.WHITE);
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				button_log.setBackground(new Color (32, 99, 155));
+			}
+		});
+
+		button_log.addActionListener(e -> {
+			saveValueOfArg1();
+			saveValueOfMathOp(OPERATOR.LOG);
+		});
+
+		button_log.setOpaque(true);
+		button_log.setForeground(Color.BLACK);
+		button_log.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
+		button_log.setBackground(new Color(32, 99, 155));
+		button_log.setBounds(209, 294, 75, 40);
+		getContentPane().add(button_log);
+
 		JButton button_equals = new JButton("=");
 		button_equals.addMouseListener(new MouseAdapter() {
 			@Override
