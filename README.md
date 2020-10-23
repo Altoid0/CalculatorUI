@@ -52,8 +52,8 @@ Here is a list of all the new features we want to add:
 4. Physics Converter (Kinematic Equation Solver)  
     Goal: Complete in Week 9  
     Assignment: Dhruv K
-5. Free Text Calculator (Typed in functions)
-    Goal: Complete in Week 10
+5. Free Text Calculator (Typed in functions)  
+    Goal: Complete in Week 10  
     Assignment: Gautam
 
 ## Project Credits
