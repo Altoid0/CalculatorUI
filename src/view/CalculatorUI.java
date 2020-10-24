@@ -1,4 +1,4 @@
-// Dhruv K
+// Dhruv K, Gautam G, Tanay S, Dhruv S
 package view;
 
 import java.awt.EventQueue;
@@ -340,6 +340,7 @@ public class CalculatorUI extends JFrame {
 		button_minus.setBounds(327, 138, 75, 40);
 		getContentPane().add(button_minus);
 
+		// Dhruv K
 		JButton button_multiply = new JButton("x");
 		button_multiply.addMouseListener(new MouseAdapter() {
 			@Override
@@ -363,6 +364,7 @@ public class CalculatorUI extends JFrame {
 		button_multiply.setBounds(327, 190, 75, 40);
 		getContentPane().add(button_multiply);
 
+		// Dhruv K
 		JButton button_divide = new JButton("/");
 		button_divide.addMouseListener(new MouseAdapter() {
 			@Override
@@ -385,7 +387,7 @@ public class CalculatorUI extends JFrame {
 		button_divide.setBounds(327, 242, 75, 40);
 		getContentPane().add(button_divide);
 
-
+		// Dhruv K
 		JButton button_modulus = new JButton("%");
 		button_modulus.addMouseListener(new MouseAdapter() {
 			@Override
@@ -408,7 +410,7 @@ public class CalculatorUI extends JFrame {
 		button_modulus.setBounds(122, 86, 75, 40);
 		getContentPane().add(button_modulus);
 
-
+		// Dhruv K
 		JButton button_exponent = new JButton("^");
 		button_exponent.addMouseListener(new MouseAdapter() {
 			@Override
@@ -431,6 +433,8 @@ public class CalculatorUI extends JFrame {
 		button_exponent.setBounds(209, 86, 75, 40);
 		getContentPane().add(button_exponent);
 
+
+		// Gautam G
 		JButton button_log = new JButton("log10");
 		button_log.addMouseListener(new MouseAdapter() {
 			@Override

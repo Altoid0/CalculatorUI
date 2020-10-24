@@ -52,6 +52,7 @@ public class ConverterUI extends JFrame {
         getContentPane().setLayout(null);
 
         //properties for input text field
+        // Dhruv S
         JTextField celsiusTextField = new JTextField("");
         celsiusTextField.setFont(new Font("Impact", Font.PLAIN, 72));
         celsiusTextField.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -59,6 +60,7 @@ public class ConverterUI extends JFrame {
          getContentPane().add(celsiusTextField);
 
          //properties for output label
+        // Dhruv S
         JLabel farOutput = new JLabel("Fahrenheit");
         farOutput.setFont(new Font("Impact", Font.PLAIN, 72));
         farOutput.setHorizontalAlignment(SwingConstants.CENTER);
@@ -80,6 +82,7 @@ public class ConverterUI extends JFrame {
         }); */
 
         //properties for instructions label
+        // Dhruv S
         JLabel instrux = new JLabel("Enter Celsius input above");
         instrux.setFont(new Font("Impact", Font.PLAIN, 18));
         instrux.setHorizontalAlignment(SwingConstants.CENTER);
@@ -91,6 +94,7 @@ public class ConverterUI extends JFrame {
         JButton convertButton = new JButton("Convert");
 
         //color change once button is clicked
+        // Dhruv S
         convertButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -103,6 +107,7 @@ public class ConverterUI extends JFrame {
         });
 
         //properties for button
+        // Dhruv S
         convertButton.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
         convertButton.setFont(new Font("Impact", Font.PLAIN, 50));
         convertButton.setOpaque(true);
@@ -110,6 +115,7 @@ public class ConverterUI extends JFrame {
         convertButton.setBackground(new Color(60, 174, 163));
 
         //logic code once button is clicked
+        // Tanay S
         convertButton.addActionListener(e -> {
             //if else statement to see if text field is blank (Gautam added)
             if (celsiusTextField.getText().equals("")) {

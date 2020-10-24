@@ -15,7 +15,7 @@ import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-
+// Tanay and Dhruv S
 public class MainMenu extends JFrame {
     /**
      Launch the MainMenu to display sub features
@@ -35,11 +35,14 @@ public class MainMenu extends JFrame {
     /**
      * Create the frame.
      */
+
+    // Tanay and Dhruv S
     public MainMenu() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
 
         // Content Panel to add Label
+        // Tanay and Dhruv S
         Container content = getContentPane();
         content.setBackground(new Color(100,100,255));
 
@@ -54,7 +57,7 @@ public class MainMenu extends JFrame {
         menuBar.add(mnSuite);
 
         // Created Scientific Selector Button that creates new CalculatorUI object
-        // Tanay and Dhruv S
+        // Dhruv K
         JMenuItem mntmCalculator = new JMenuItem("Scientific Calculator");
         mntmCalculator.addActionListener(e -> {
             CalculatorUI frame = new CalculatorUI();
@@ -63,7 +66,7 @@ public class MainMenu extends JFrame {
         mnSuite.add(mntmCalculator);
 
         // Created Temperature Converter Selector Button that creates new ConverterUI object
-        // Tanay and Dhruv S
+        // Dhruv K
         JMenuItem mntmTempConv = new JMenuItem("Temperature Convertor");
         mntmTempConv.addActionListener(e -> {
             ConverterUI frame = new ConverterUI();
