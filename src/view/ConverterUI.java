@@ -49,7 +49,7 @@ public class ConverterUI extends JFrame {
         //sets up bounds for windows
         getContentPane().setBackground(new Color(51, 49, 47));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setBounds(100, 100, 450, 470);
+        setBounds(100, 100, 600, 500);
         getContentPane().setLayout(null);
 
         //properties for input text field
