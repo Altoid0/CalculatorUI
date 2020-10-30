@@ -47,7 +47,7 @@ public class SolverUI extends JFrame {
     }
 
     //components of application
-    // Tanay and Dhruv S
+    // Dhruv K
     public SolverUI() {
         //sets up bounds for windows
         getContentPane().setBackground(new Color(51, 49, 47));
@@ -56,7 +56,7 @@ public class SolverUI extends JFrame {
         getContentPane().setLayout(null);
 
         //properties for input text field
-        // Dhruv S
+        // Dhruv K
         JTextField celsiusTextField = new JTextField("");
         celsiusTextField.setFont(new Font("Impact", Font.PLAIN, 72));
         celsiusTextField.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -64,7 +64,7 @@ public class SolverUI extends JFrame {
         getContentPane().add(celsiusTextField);
 
         //properties for output label
-        // Dhruv S
+        // Dhruv K
         JLabel output = new JLabel("Answer");
         output.setFont(new Font("Impact", Font.PLAIN, 60));
         output.setHorizontalAlignment(SwingConstants.CENTER);
@@ -86,7 +86,7 @@ public class SolverUI extends JFrame {
         }); */
 
         //properties for instructions label
-        // Dhruv S
+        // Dhruv K
         JLabel instrux = new JLabel("Select a Kinematic formula to solve with");
         instrux.setFont(new Font("Impact", Font.PLAIN, 18));
         instrux.setHorizontalAlignment(SwingConstants.CENTER);
@@ -98,7 +98,7 @@ public class SolverUI extends JFrame {
         JButton convertButtonFar = new JButton("Solve");
 
         //color change once button is clicked
-        // Dhruv S
+        // Dhruv K
         convertButtonFar.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -111,7 +111,7 @@ public class SolverUI extends JFrame {
         });
 
         //properties for button
-        // Dhruv S
+        // Dhruv K
         convertButtonFar.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
         convertButtonFar.setFont(new Font("Impact", Font.PLAIN, 48));
         convertButtonFar.setOpaque(true);
@@ -119,7 +119,7 @@ public class SolverUI extends JFrame {
         convertButtonFar.setBackground(new Color(60, 174, 163));
 
         //logic code once button is clicked
-        // Tanay S
+        // Dhruv K
         convertButtonFar.addActionListener(e -> {
             //if else statement to see if text field is blank (Gautam added)
             if (celsiusTextField.getText().equals("")) {
