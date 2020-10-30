@@ -48,12 +48,18 @@ Log | Base 10 logarithm of an argument | The user clicks on a number button foll
 Exponents | Raise a base to the power | The user selects the base number first and then the exponent button (the upward arrow) and then selects the power the user wants to raise the base to. 
 Modulus | Get the remainder when dividing two numbers | The user selects the numerator of the fraction and then the modulus operator, followed by the denominator of the fraction. The modulus function will return the remainder of the fraction. 
 Trig (sin, cos, tan) | Get a trig function of an argument | The user selects a number to be inputted into one of the three trig functions (sin, cos, tan). The trig function math is all in degrees.
-Square Root | Get the square root of an argument | The user selects a number to be inputted into a square root and the output is displayed on the text field. 
+Square Root | Get the square root of an argument | The user selects a number to be inputted into a square root and the output is displayed on the text field.  
+
+#### Calculator Demo
+![](https://github.com/Altoid0/CalculatorUI/blob/master/assets/CalculatorDemo.gif)  
 
 ### Temperature Converter
 Function Name | Description | How it is done
 ------------- | ----------- | --------------
 Celsius to Fahrenheit | Converting the celsius degrees that the user inputs to fahrenheit | The user enters a celsius temperature in the text field on the top of the screen and then clicks convert. The fahrenheit label on the bottom then changes to display that fahrenheit temperature calculated from the equation ((Celsius x 9/5) + 32)  
+
+#### Temperature Converter Demo
+
 
 ## Code in Progress
 These are all of the sub-projects that we are working on currently:  
