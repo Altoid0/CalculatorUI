@@ -438,11 +438,11 @@ public class CalculatorUI extends JFrame {
 		button_sin.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				button_sin.setBackground(Color.PINK);
+				button_sin.setBackground(Color.WHITE);
 			}
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				button_sin.setBackground(new Color(60, 174, 163));
+				button_sin.setBackground(new Color(32, 99, 155));
 			}
 		});
 		button_sin.addActionListener(e -> {
@@ -453,7 +453,6 @@ public class CalculatorUI extends JFrame {
 		button_sin.setOpaque(true);
 		button_sin.setForeground(Color.BLACK);
 		button_sin.setBackground(new Color(32, 99, 155));
-		button_sin.addActionListener(e -> updateCalcArea(button_sin.getText()));
 		button_sin.setBounds(35, 138, 75, 40);
 		getContentPane().add(button_sin);
 
@@ -461,18 +460,17 @@ public class CalculatorUI extends JFrame {
 		button_cos.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				button_cos.setBackground(Color.PINK);
+				button_cos.setBackground(Color.WHITE);
 			}
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				button_cos.setBackground(new Color(60, 174, 163));
+				button_cos.setBackground(new Color(32, 99, 155));
 			}
 		});
 		button_cos.addActionListener(e -> {
 			saveValueOfArg1();
 			saveValueOfMathOp(OPERATOR.COS);
 		});
-		button_cos.addActionListener(e -> updateCalcArea(button_cos.getText()));
 		button_cos.setOpaque(true);
 		button_cos.setForeground(Color.BLACK);
 		button_cos.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
@@ -484,18 +482,17 @@ public class CalculatorUI extends JFrame {
 		button_tan.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				button_tan.setBackground(Color.PINK);
+				button_tan.setBackground(Color.WHITE);
 			}
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				button_tan.setBackground(new Color(60, 174, 163));
+				button_tan.setBackground(new Color(32, 99, 155));
 			}
 		});
 		button_tan.addActionListener(e -> {
 			saveValueOfArg1();
 			saveValueOfMathOp(OPERATOR.TAN);
 		});
-		button_tan.addActionListener(e -> updateCalcArea(button_tan.getText()));
 		button_tan.setOpaque(true);
 		button_tan.setForeground(Color.BLACK);
 		button_tan.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
