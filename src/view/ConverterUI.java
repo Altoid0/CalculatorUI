@@ -24,11 +24,12 @@ public class ConverterUI extends JFrame {
 
     //var setup
     private JPanel mainPanel;
-    private JTextField celsiusTextField;
-    private JLabel celsiusLabel;
+    private JTextField userTextField;
     private JButton convertButtonFar;
+    private JButton convertButtonIn;
     private JLabel fahrenheitLabel;
-    private double celsiusInput;
+    private double userInput;
+    private double farConvertNumber = 1.8;
 
 //runs frame
     public static void main(String[] args) {
@@ -48,20 +49,20 @@ public class ConverterUI extends JFrame {
         //sets up bounds for windows
         getContentPane().setBackground(new Color(51, 49, 47));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setBounds(100, 100, 450, 470);
+        setBounds(100, 100, 600, 500);
         getContentPane().setLayout(null);
 
         //properties for input text field
         // Dhruv S
-        JTextField celsiusTextField = new JTextField("");
-        celsiusTextField.setFont(new Font("Impact", Font.PLAIN, 72));
-        celsiusTextField.setHorizontalAlignment(SwingConstants.RIGHT);
-        celsiusTextField.setBounds(25, 22, 377, 67);
-         getContentPane().add(celsiusTextField);
+        JTextField userTextField = new JTextField("");
+        userTextField.setFont(new Font("Impact", Font.PLAIN, 72));
+        userTextField.setHorizontalAlignment(SwingConstants.RIGHT);
+        userTextField.setBounds(25, 22, 377, 67);
+         getContentPane().add(userTextField);
 
          //properties for output label
         // Dhruv S
-        JLabel output = new JLabel("Fahrenheit");
+        JLabel output = new JLabel("Result");
         output.setFont(new Font("Impact", Font.PLAIN, 60));
         output.setHorizontalAlignment(SwingConstants.CENTER);
         output.setBounds(25, 300, 377, 67);
@@ -91,7 +92,7 @@ public class ConverterUI extends JFrame {
         getContentPane().add(instrux);
 
         //creating button
-        JButton convertButtonFar = new JButton("Convert");
+        JButton convertButtonFar = new JButton("Fahrenheit");
 
         //color change once button is clicked
         // Dhruv S
@@ -109,7 +110,7 @@ public class ConverterUI extends JFrame {
         //properties for button
         // Dhruv S
         convertButtonFar.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
-        convertButtonFar.setFont(new Font("Impact", Font.PLAIN, 48));
+        convertButtonFar.setFont(new Font("Impact", Font.PLAIN, 36));
         convertButtonFar.setOpaque(true);
         convertButtonFar.setForeground(Color.WHITE);
         convertButtonFar.setBackground(new Color(60, 174, 163));
@@ -118,12 +119,12 @@ public class ConverterUI extends JFrame {
         // Tanay S
         convertButtonFar.addActionListener(e -> {
             //if else statement to see if text field is blank (Gautam added)
-            if (celsiusTextField.getText().equals("")) {
+            if (userTextField.getText().equals("")) {
                 output.setText("Result");
             } else {
                 //business logic code to convert
-                celsiusInput = Double.parseDouble((celsiusTextField.getText()));
-                double fOutput = celsiusInput*(9/5)+32;
+                userInput = Double.parseDouble((userTextField.getText()));
+                double fOutput = userInput*farConvertNumber + 32;
                 String faOutput = String.valueOf(fOutput);
 
                 output.setText(faOutput);
@@ -133,5 +134,48 @@ public class ConverterUI extends JFrame {
         //setting bounds for button
         convertButtonFar.setBounds(25, 185, 175, 67);
         getContentPane().add(convertButtonFar);
+
+        // Create Object of button
+        JButton convertButtonIn = new JButton("Inches");
+
+        // Tanay Shah
+        convertButtonIn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                convertButtonIn.setBackground(Color.PINK);
+            }
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                convertButtonIn.setBackground(new Color(60, 174, 163));
+            }
+        });
+
+        //properties for button
+        // Tanay Shah
+        convertButtonIn.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
+        convertButtonIn.setFont(new Font("Impact", Font.PLAIN, 36));
+        convertButtonIn.setOpaque(true);
+        convertButtonIn.setForeground(Color.WHITE);
+        convertButtonIn.setBackground(new Color(60, 174, 163));
+
+        //logic code once button is clicked
+        // Tanay S
+        convertButtonIn.addActionListener(e -> {
+            //if else statement to see if text field is blank (Gautam added)
+            if (userTextField.getText().equals("")) {
+                output.setText("Result");
+            } else {
+                //business logic code to convert
+                userInput = Double.parseDouble((userTextField.getText()));
+                double inOutput = userInput*(12);
+                String inStringOutput = String.valueOf(inOutput);
+
+                output.setText(inStringOutput);
+            }
+
+        });
+        //setting bounds for button
+        convertButtonIn.setBounds(225, 185, 175, 67);
+        getContentPane().add(convertButtonIn);
     }
 }
