@@ -34,6 +34,7 @@ You will need to pull out code down and view it in IntelliJ. Follow this documen
 
 
 ## Calculator Functions
+![](https://github.com/Altoid0/CalculatorUI/blob/master/assets/HierarchyFlowchart.png)
 We have created two main sub-projects in our CalculatorUI: 
 - Scientific Calculator  
 A basic scientific calculator with basic math, log, exponents, and modulus operators
