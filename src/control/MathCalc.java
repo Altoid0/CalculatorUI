@@ -2,7 +2,7 @@ package control;
 import java.lang.Math;
 public class MathCalc {
 	// Updated enumerator list to include new functions
-	public static enum OPERATOR { NOOP, PLUS, MINUS, DIVIDE, MULTIPLY, MODULUS, EXPONENT, LOG, SIN, COS, TAN };
+	public static enum OPERATOR { NOOP, PLUS, MINUS, DIVIDE, MULTIPLY, MODULUS, EXPONENT, LOG, SIN, COS, TAN, SQRT };
 	public static double calculateIt(double arg1, OPERATOR mathOp, double arg2) {
 
 		double calcAnswer;
@@ -42,6 +42,9 @@ public class MathCalc {
 				break;
 			case TAN:
 				calcAnswer = Math.tan(arg1);
+				break;
+			case SQRT:
+				calcAnswer = Math.sqrt(arg1);
 				break;
 	        case NOOP:
 	        default:	
