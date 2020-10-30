@@ -1,16 +1,9 @@
 
 package view;
 
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.EventQueue;
+import java.awt.*;
 
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
+import javax.swing.*;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -39,12 +32,21 @@ public class MainMenu extends JFrame {
     // Tanay and Dhruv S
     public MainMenu() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 450, 300);
+        setBounds(100, 100, 600, 500);
+
+
 
         // Content Panel to add Label
         // Tanay and Dhruv S
         Container content = getContentPane();
         content.setBackground(new Color(100,100,255));
+
+        JLabel welcomeLabel = new JLabel("Welcome to our programming suite!");
+        welcomeLabel.setFont(new Font("Impact", Font.PLAIN, 37));
+        welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        welcomeLabel.setBounds(25, 100, 377, 67);
+        welcomeLabel.setForeground(Color.WHITE);
+        getContentPane().add(welcomeLabel);
 
         // Menu Objects
         // Tanay and Dhruv S
