@@ -83,6 +83,7 @@ public class MainMenu extends JFrame {
         });
         mnSuite.add(mntmDerivativeCalc);
 
+        // Dhruv K
         JMenuItem mntmPhyicsSolv = new JMenuItem("Physics Solver");
         mntmPhyicsSolv.addActionListener(e -> {
             SolverUI frame = new SolverUI();
