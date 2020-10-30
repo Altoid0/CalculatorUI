@@ -73,6 +73,13 @@ public class MainMenu extends JFrame {
             frame.setVisible(true);
         });
         mnSuite.add(mntmTempConv);
+
+        JMenuItem mntmDerivativeCalc = new JMenuItem("Derivative Calculator");
+        mntmDerivativeCalc.addActionListener(e -> {
+            DerivativeCalcUI frame = new DerivativeCalcUI();
+            frame.setVisible(true);
+        });
+        mnSuite.add(mntmDerivativeCalc);
       //  mnSuite.add(mntmPhysicsSolve);  <-- place holder for eventual physics solver feature
 
 
