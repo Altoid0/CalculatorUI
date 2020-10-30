@@ -387,6 +387,29 @@ public class CalculatorUI extends JFrame {
 		button_divide.setBounds(327, 242, 75, 40);
 		getContentPane().add(button_divide);
 
+		//Gautam G
+		JButton button_sqrt = new JButton("√");
+		button_sqrt.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				button_sqrt.setBackground(Color.WHITE);
+			}
+
+			public void mouseReleased(MouseEvent e) {
+				button_sqrt.setBackground(new Color(252, 193, 55));
+			}
+		});
+		button_sqrt.addActionListener(e -> {
+			saveValueOfArg1();
+			saveValueOfMathOp(OPERATOR.SQRT);
+		});
+		button_sqrt.setOpaque(true);
+		button_sqrt.setForeground(Color.BLACK);
+		button_sqrt.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
+		button_sqrt.setBackground(new Color(252, 193, 55));
+		button_sqrt.setBounds(327, 294, 75, 40);
+		getContentPane().add(button_sqrt);
+
 		// Dhruv K
 		JButton button_modulus = new JButton("%");
 		button_modulus.addMouseListener(new MouseAdapter() {
@@ -546,9 +569,8 @@ public class CalculatorUI extends JFrame {
 		button_equals.setForeground(Color.BLACK);
 		button_equals.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
 		button_equals.setBackground(new Color(252, 193, 55));
-		button_equals.setBounds(327, 294, 75, 40);
+		button_equals.setBounds(327, 346, 75, 40);
 		getContentPane().add(button_equals);
-
 
 
 		JButton button_clear = new JButton("AC");
