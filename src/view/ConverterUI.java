@@ -61,12 +61,12 @@ public class ConverterUI extends JFrame {
 
          //properties for output label
         // Dhruv S
-        JLabel farOutput = new JLabel("Fahrenheit");
-        farOutput.setFont(new Font("Impact", Font.PLAIN, 72));
-        farOutput.setHorizontalAlignment(SwingConstants.CENTER);
-        farOutput.setBounds(25, 300, 377, 67);
-        farOutput.setForeground(Color.WHITE);
-        getContentPane().add(farOutput);
+        JLabel output = new JLabel("Fahrenheit");
+        output.setFont(new Font("Impact", Font.PLAIN, 72));
+        output.setHorizontalAlignment(SwingConstants.CENTER);
+        output.setBounds(25, 300, 377, 67);
+        output.setForeground(Color.WHITE);
+        getContentPane().add(output);
 
         /* celsiusTextField.addFocusListener(new FocusListener() {
             @Override
@@ -119,14 +119,14 @@ public class ConverterUI extends JFrame {
         convertButton.addActionListener(e -> {
             //if else statement to see if text field is blank (Gautam added)
             if (celsiusTextField.getText().equals("")) {
-                farOutput.setText("Fahrenheit");
+                output.setText("Fahrenheit");
             } else {
                 //business logic code to convert
                 celsiusInput = Double.parseDouble((celsiusTextField.getText()));
                 double fOutput = celsiusInput*(9/5)+32;
                 String faOutput = String.valueOf(fOutput);
 
-                farOutput.setText(faOutput);
+                output.setText(faOutput);
             }
 
         });
