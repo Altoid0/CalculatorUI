@@ -31,28 +31,34 @@ Basic Math Operation (Addition/Subtraction/Multiplication/Division) | Additions,
 Log | Base 10 logarithm of an argument | The user clicks on a number button followed by the log button to indicate that the user wants to take a base 10 logarithm of the number the user clicks on.
 Exponents | Raise a base to the power | The user selects the base number first and then the exponent button (the upward arrow) and then selects the power the user wants to raise the base to. 
 Modulus | Get the remainder when dividing two numbers | The user selects the numerator of the fraction and then the modulus operator, followed by the denominator of the fraction. The modulus function will return the remainder of the fraction. 
+Trig (sin, cos, tan) | Get a trig function of an argument | The user selects a number to be inputted into one of the three trig functions (sin, cos, tan). The trig function math is all in degrees.
+Square Root | Get the square root of an argument | The user selects a number to be inputted into a square root and the output is displayed on the text field. 
 
 ### Temperature Converter
 Function Name | Description | How it is done
 ------------- | ----------- | --------------
-Celsius to Fahrenheit | Converting the celsius degrees that the user inputs to fahrenheit | The user enters a celsius temperature in the text field on the top of the screen and then clicks convert. The fahrenheit label on the bottom then changes to display that fahrenheit temperature calculated from the equation ((Celsius x 9/5) + 32)
+Celsius to Fahrenheit | Converting the celsius degrees that the user inputs to fahrenheit | The user enters a celsius temperature in the text field on the top of the screen and then clicks convert. The fahrenheit label on the bottom then changes to display that fahrenheit temperature calculated from the equation ((Celsius x 9/5) + 32)  
+
+## Code in Progress
+These are all of the sub-projects that we are working on currently:  
+1. Physics Solver
+   We are working on the physics converter for the 4 main kinematic equations. The user will input all the values for the variables of each of the 4 kinematic equaions and the code will solve for the missing variable.
+2. Derivative Calculator
+   We are working on the derivative calculator so that if the user inputs an equation, the calculator will find the derivative for it based on the 3 basic derivative rules: power rule, quotient rule, and chain rule. 
 
 ## Future Features to Add
 Throughout the course of his project, we want to add more and more features to make the best calculator possible.  
 Here is a list of all the new features we want to add: 
-1. Square Roots  
-    Goal: Complete in Week 8  
-    Assignment: Dhruv S
-2. Trig (sin, cos, & tan)  
-    Goal: Complete in Week 8  
-    Assignment: Gautam
-3. Encoding Converter (Binary & Hex)  
+1. Encoding Converter (Binary & Hex)  
     Goal: Complete in Week 9  
     Assignment: Tanay
-4. Physics Converter (Kinematic Equation Solver)  
+2. Physics Converter (Kinematic Equation Solver)  
     Goal: Complete in Week 9  
     Assignment: Dhruv K
-5. Free Text Calculator (Typed in functions)  
+3. Derivative Calculator (derivative with respect to x)
+    Goal: Complete in Week 9
+    Assignment: Dhruv S
+3. Free Text Calculator (Typed in functions)  
     Goal: Complete in Week 10  
     Assignment: Gautam
 
