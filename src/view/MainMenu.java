@@ -80,7 +80,13 @@ public class MainMenu extends JFrame {
             frame.setVisible(true);
         });
         mnSuite.add(mntmDerivativeCalc);
-      //  mnSuite.add(mntmPhysicsSolve);  <-- place holder for eventual physics solver feature
+
+        JMenuItem mntmPhyicsSolv = new JMenuItem("Physics Solver");
+        mntmPhyicsSolv.addActionListener(e -> {
+            SolverUI frame = new SolverUI();
+            frame.setVisible(true);
+        });
+        mnSuite.add(mntmPhyicsSolv);
 
 
 
