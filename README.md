@@ -60,7 +60,15 @@ Function Name | Description | How it is done
 Celsius to Fahrenheit | Converting the celsius degrees that the user inputs to fahrenheit | The user enters a celsius temperature in the text field on the top of the screen and then clicks convert. The fahrenheit label on the bottom then changes to display that fahrenheit temperature calculated from the equation ((Celsius x 9/5) + 32)  
 
 #### Temperature Converter Demo
+![](https://github.com/Altoid0/CalculatorUI/blob/master/assets/ConverterDemo.gif)  
 
+### Derivative Calculator
+Function Name | Description | How it is done
+------------- | ----------- | --------------
+Derivative Calculator | Calculate a simple derivative using power rule | The user enters in the coefficient and the power to be used. The coefficient is multiplied by the power and one is subtracted from the power. 
+
+#### Derivative Demo
+![](https://github.com/Altoid0/CalculatorUI/blob/master/assets/DerivativeCalc.gif)  
 
 ## Code in Progress
 These are all of the sub-projects that we are working on currently:  
