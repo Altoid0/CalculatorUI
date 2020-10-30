@@ -1,5 +1,5 @@
 // Dhruv K, Gautam G, Tanay S, Dhruv S
-package view;
+package test;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
