@@ -26,7 +26,7 @@ public class ConverterUI extends JFrame {
     private JPanel mainPanel;
     private JTextField celsiusTextField;
     private JLabel celsiusLabel;
-    private JButton convertButton;
+    private JButton convertButtonFar;
     private JLabel fahrenheitLabel;
     private double celsiusInput;
 
@@ -61,12 +61,12 @@ public class ConverterUI extends JFrame {
 
          //properties for output label
         // Dhruv S
-        JLabel farOutput = new JLabel("Fahrenheit");
-        farOutput.setFont(new Font("Impact", Font.PLAIN, 72));
-        farOutput.setHorizontalAlignment(SwingConstants.CENTER);
-        farOutput.setBounds(25, 300, 377, 67);
-        farOutput.setForeground(Color.WHITE);
-        getContentPane().add(farOutput);
+        JLabel output = new JLabel("Fahrenheit");
+        output.setFont(new Font("Impact", Font.PLAIN, 60));
+        output.setHorizontalAlignment(SwingConstants.CENTER);
+        output.setBounds(25, 300, 377, 67);
+        output.setForeground(Color.WHITE);
+        getContentPane().add(output);
 
         /* celsiusTextField.addFocusListener(new FocusListener() {
             @Override
@@ -83,7 +83,7 @@ public class ConverterUI extends JFrame {
 
         //properties for instructions label
         // Dhruv S
-        JLabel instrux = new JLabel("Enter Celsius input above");
+        JLabel instrux = new JLabel("Enter a value input above");
         instrux.setFont(new Font("Impact", Font.PLAIN, 18));
         instrux.setHorizontalAlignment(SwingConstants.CENTER);
         instrux.setForeground(Color.WHITE);
@@ -91,47 +91,47 @@ public class ConverterUI extends JFrame {
         getContentPane().add(instrux);
 
         //creating button
-        JButton convertButton = new JButton("Convert");
+        JButton convertButtonFar = new JButton("Convert");
 
         //color change once button is clicked
         // Dhruv S
-        convertButton.addMouseListener(new MouseAdapter() {
+        convertButtonFar.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                convertButton.setBackground(Color.PINK);
+                convertButtonFar.setBackground(Color.PINK);
             }
             @Override
             public void mouseReleased(MouseEvent e) {
-                convertButton.setBackground(new Color(60, 174, 163));
+                convertButtonFar.setBackground(new Color(60, 174, 163));
             }
         });
 
         //properties for button
         // Dhruv S
-        convertButton.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
-        convertButton.setFont(new Font("Impact", Font.PLAIN, 50));
-        convertButton.setOpaque(true);
-        convertButton.setForeground(Color.WHITE);
-        convertButton.setBackground(new Color(60, 174, 163));
+        convertButtonFar.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
+        convertButtonFar.setFont(new Font("Impact", Font.PLAIN, 48));
+        convertButtonFar.setOpaque(true);
+        convertButtonFar.setForeground(Color.WHITE);
+        convertButtonFar.setBackground(new Color(60, 174, 163));
 
         //logic code once button is clicked
         // Tanay S
-        convertButton.addActionListener(e -> {
+        convertButtonFar.addActionListener(e -> {
             //if else statement to see if text field is blank (Gautam added)
             if (celsiusTextField.getText().equals("")) {
-                farOutput.setText("Fahrenheit");
+                output.setText("Result");
             } else {
                 //business logic code to convert
                 celsiusInput = Double.parseDouble((celsiusTextField.getText()));
                 double fOutput = celsiusInput*(9/5)+32;
                 String faOutput = String.valueOf(fOutput);
 
-                farOutput.setText(faOutput);
+                output.setText(faOutput);
             }
 
         });
         //setting bounds for button
-        convertButton.setBounds(25, 170, 377, 67);
-        getContentPane().add(convertButton);
+        convertButtonFar.setBounds(25, 185, 175, 67);
+        getContentPane().add(convertButtonFar);
     }
 }
