@@ -107,7 +107,7 @@ public class DerivativeCalcUI extends JFrame {
         JLabel answercoefficientLabel = new JLabel("a");
         answercoefficientLabel.setFont(new Font("Courier", Font.ITALIC, 50));
         answercoefficientLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        answercoefficientLabel.setBounds(145, 374, 50, 50);
+        answercoefficientLabel.setBounds(130, 374, 80, 50);
         answercoefficientLabel.setForeground(Color.WHITE);
         getContentPane().add(answercoefficientLabel);
 
