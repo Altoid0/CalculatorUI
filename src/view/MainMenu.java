@@ -39,12 +39,12 @@ public class MainMenu extends JFrame {
         // Content Panel to add Label
         // Tanay and Dhruv S
         Container content = getContentPane();
-        content.setBackground(new Color(100,100,255));
+        content.setBackground(new Color(38, 36, 36));
 
         JLabel welcomeLabel = new JLabel("Welcome to our programming suite!");
-        welcomeLabel.setFont(new Font("Impact", Font.PLAIN, 37));
+        welcomeLabel.setFont(new Font("Courier", Font.PLAIN, 30));
         welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        welcomeLabel.setBounds(25, 100, 377, 67);
+        welcomeLabel.setBounds(25, 0, 377, 67);
         welcomeLabel.setForeground(Color.WHITE);
         getContentPane().add(welcomeLabel);
 

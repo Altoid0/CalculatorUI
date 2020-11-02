@@ -28,7 +28,7 @@ public class DerivativeCalcUI extends JFrame {
     private JTextField powerField;
     private JButton calculateButton;
     private JLabel initialLabel;
-    private JLabel answerLabel;
+    private JLabel answercoefficientLabel;
     private JLabel infoLabel;
     private JLabel infoLabel2;
     private JLabel instruxLabel;
@@ -59,77 +59,73 @@ public class DerivativeCalcUI extends JFrame {
         //properties for input text field
         // Dhruv S
 
-        JLabel instruxLabel = new JLabel("Enter coefficient below:");
-        instruxLabel.setFont(new Font("Impact", Font.PLAIN, 18));
+        JLabel instruxLabel = new JLabel("Enter term below:");
+        instruxLabel.setFont(new Font("Impact", Font.PLAIN, 40));
         instruxLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        instruxLabel.setBounds(25, 10, 377, 30);
+        instruxLabel.setBounds(25, 40, 377, 30);
         instruxLabel.setForeground(Color.WHITE);
         getContentPane().add(instruxLabel);
 
         JTextField coefficientField = new JTextField("");
-        coefficientField.setFont(new Font("Impact", Font.PLAIN, 40));
+        coefficientField.setFont(new Font("Courier", Font.ITALIC, 40));
         coefficientField.setHorizontalAlignment(SwingConstants.RIGHT);
-        coefficientField.setBounds(25, 50, 377, 50);
+        coefficientField.setBounds(140, 140, 50, 50);
         getContentPane().add(coefficientField);
 
-        JLabel instruxLabel2 = new JLabel("Enter power below:");
-        instruxLabel2.setFont(new Font("Impact", Font.PLAIN, 18));
+        JLabel instruxLabel2 = new JLabel("x");
+        instruxLabel2.setFont(new Font("Courier", Font.ITALIC, 60));
         instruxLabel2.setHorizontalAlignment(SwingConstants.CENTER);
-        instruxLabel2.setBounds(25, 110, 377, 30);
+        instruxLabel2.setBounds(25, 140, 377, 50);
         instruxLabel2.setForeground(Color.WHITE);
         getContentPane().add(instruxLabel2);
 
         JTextField powerField = new JTextField("");
-        powerField.setFont(new Font("Impact", Font.PLAIN, 40));
+        powerField.setFont(new Font("Courier", Font.PLAIN, 30));
         powerField.setHorizontalAlignment(SwingConstants.RIGHT);
-        powerField.setBounds(25, 140, 377, 50);
+        powerField.setBounds(230, 120, 30, 30);
         getContentPane().add(powerField);
 
 
         //properties for output label
         // Dhruv S
-        JLabel infoLabel = new JLabel("Initial term input:");
+        JLabel infoLabel = new JLabel("Derivative output:");
         infoLabel.setFont(new Font("Impact", Font.PLAIN, 25));
         infoLabel.setHorizontalAlignment(SwingConstants.CENTER);
         infoLabel.setBounds(25, 290, 377, 67);
         infoLabel.setForeground(Color.WHITE);
         getContentPane().add(infoLabel);
 
-        JLabel initialLabel = new JLabel("6x^2");
+     /*   JLabel initialLabel = new JLabel("6x^2");
         initialLabel.setFont(new Font("Impact", Font.PLAIN, 30));
         initialLabel.setHorizontalAlignment(SwingConstants.CENTER);
         initialLabel.setBounds(25, 340, 377, 67);
         initialLabel.setForeground(Color.WHITE);
         getContentPane().add(initialLabel);
+*/
 
-        JLabel infoLabel2 = new JLabel("Derivative Output:");
-        infoLabel2.setFont(new Font("Impact", Font.PLAIN, 25));
-        infoLabel2.setHorizontalAlignment(SwingConstants.CENTER);
-        infoLabel2.setBounds(25, 390, 377, 67);
-        infoLabel2.setForeground(Color.WHITE);
-        getContentPane().add(infoLabel2);
 
-        JLabel answerLabel = new JLabel("");
-        answerLabel.setFont(new Font("Impact", Font.PLAIN, 50));
-        answerLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        answerLabel.setBounds(25, 440, 377, 67);
-        answerLabel.setForeground(Color.WHITE);
-        getContentPane().add(answerLabel);
+        JLabel answercoefficientLabel = new JLabel("a");
+        answercoefficientLabel.setFont(new Font("Courier", Font.ITALIC, 50));
+        answercoefficientLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        answercoefficientLabel.setBounds(130, 374, 80, 50);
+        answercoefficientLabel.setForeground(Color.WHITE);
+        getContentPane().add(answercoefficientLabel);
 
-        /* celsiusTextField.addFocusListener(new FocusListener() {
-            @Override
-            public void focusGained(FocusEvent e) {
-                celsiusTextField.setText("");
-            }
+        JLabel varLabel = new JLabel("x");
+        varLabel.setFont(new Font("Courier", Font.ITALIC, 60));
+        varLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        varLabel.setBounds(25, 370, 377, 50);
+        varLabel.setForeground(Color.WHITE);
+        getContentPane().add(varLabel);
 
-            @Override
-            public void focusLost(FocusEvent e) {
-                celsiusTextField.setFont(new Font("Impact", Font.PLAIN, 30));
-                celsiusTextField.setText("Enter your email here:");
-            }
-        }); */
+        JLabel answerpowerLabel = new JLabel("b");
+        answerpowerLabel.setFont(new Font("Courier", Font.ITALIC, 30));
+        answerpowerLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        answerpowerLabel.setBounds(230, 360, 30, 30);
+        answerpowerLabel.setForeground(Color.WHITE);
+        getContentPane().add(answerpowerLabel);
 
-        //properties for instructions label
+
 
         //creating button
         JButton calculateButton = new JButton("Calculate");
@@ -162,8 +158,14 @@ public class DerivativeCalcUI extends JFrame {
             double power = Double.parseDouble(((powerField.getText())));
             double derivativePower = power-1;
             double derivativeCoefficient = coefficient*power;
-            initialLabel.setText(coefficient + "x^" + power);
-            answerLabel.setText(derivativeCoefficient + "x^" + derivativePower);
+            int derivative_power = (int)derivativePower;
+            int derivative_coefficient = (int)derivativeCoefficient;
+            String derivativepower = String.valueOf(derivative_power);
+            String derivativecoefficient = String.valueOf(derivative_coefficient);
+            answerpowerLabel.setText(derivativepower);
+            answercoefficientLabel.setText(derivativecoefficient);
+            //initialLabel.setText(coefficient + "x^" + power);
+            //answerLabel.setText(derivativeCoefficient + "x^" + derivativePower);
 
 
         });
