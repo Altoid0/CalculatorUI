@@ -91,10 +91,18 @@ public class MainMenu extends JFrame {
         });
         mnSuite.add(mntmPhyicsSolv);
 
-
+        //Gautam G
+        JMenuItem mntmFreeText = new JMenuItem("Free Text Calculator");
+        mntmFreeText.addActionListener(e -> {
+            //catching the sleep exception from the FreeTextUI
+            try {
+                FreeTextUI.testMain();
+            } catch (InterruptedException interruptedException) {
+                interruptedException.printStackTrace();
+            }
+        });
+        mnSuite.add(mntmFreeText);
 
     }
 
 }
-
-

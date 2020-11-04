@@ -9,7 +9,7 @@ import model.CalculatorModel;
 
 //Gautam Gupta
 public class FreeTextUI {
-    public static void main (String[] args){
+    public static void testMain () throws InterruptedException {
         boolean control = true; //init var for loop control
         while (control) { //loop to run forever until user wants to exit
             //printing out all the possible operations
@@ -115,8 +115,10 @@ public class FreeTextUI {
             //printing out the full expression (val1 + operator + val2 = answer)
             if (op.length() != 1) {
                 System.out.println(op + "(" + val1 + ") = " + answer);
+                Thread.sleep(2000);
             } else {
                 System.out.println(val1 + " " + op + " " + val2 + " = " + answer);
+                Thread.sleep(2000);
             }
 
             System.out.println();
