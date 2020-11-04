@@ -30,6 +30,8 @@ public class ConverterUI extends JFrame {
     private JButton convertButtonIn;
     private JButton convertButtonHex;
     private JButton convertButtonDec;
+    private JButton convertButtonCm;
+    private JButton convertButtontoIn;
     private JLabel fahrenheitLabel;
     private double userInput;
     private String userInputString;
@@ -69,7 +71,7 @@ public class ConverterUI extends JFrame {
         JLabel output = new JLabel("Result");
         output.setFont(new Font("Impact", Font.PLAIN, 60));
         output.setHorizontalAlignment(SwingConstants.CENTER);
-        output.setBounds(25, 300, 377, 67);
+        output.setBounds(25, 310, 377, 67);
         output.setForeground(Color.WHITE);
         getContentPane().add(output);
 
@@ -248,5 +250,89 @@ public class ConverterUI extends JFrame {
         //setting bounds for button
         convertButtonDec.setBounds(25, 175, 180, 67);
         getContentPane().add(convertButtonDec);
+
+        // Create Object of button
+        JButton convertButtonCm = new JButton("In → Cm");
+
+        // Tanay Shah
+        convertButtonCm.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                convertButtonCm.setBackground(Color.PINK);
+            }
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                convertButtonCm.setBackground(new Color(60, 174, 163));
+            }
+        });
+
+        //properties for button
+        // Tanay Shah
+        convertButtonCm.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
+        convertButtonCm.setFont(new Font("Impact", Font.PLAIN, 26));
+        convertButtonCm.setOpaque(true);
+        convertButtonCm.setForeground(Color.WHITE);
+        convertButtonCm.setBackground(new Color(60, 185, 163));
+
+        //logic code once button is clicked
+        // Tanay S
+        convertButtonCm.addActionListener(e -> {
+            //if else statement to see if text field is blank (Gautam added)
+            if (userTextField.getText().equals("")) {
+                output.setText("Result");
+            } else {
+                //business logic code to convert
+                userInput = Double.parseDouble((userTextField.getText()));
+                double cmOutput = (userInput) * (2.54);
+                String cmStringOutput = String.valueOf(cmOutput);
+                output.setText(cmStringOutput);
+            }
+
+        });
+        //setting bounds for button
+        convertButtonCm.setBounds(25, 250, 180, 67);
+        getContentPane().add(convertButtonCm);
+
+        // Create Object of button
+        JButton convertButtontoIn = new JButton("Cm → In");
+
+        // Tanay Shah
+        convertButtontoIn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                convertButtontoIn.setBackground(Color.PINK);
+            }
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                convertButtontoIn.setBackground(new Color(60, 174, 163));
+            }
+        });
+
+        //properties for button
+        // Tanay Shah
+        convertButtontoIn.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
+        convertButtontoIn.setFont(new Font("Impact", Font.PLAIN, 26));
+        convertButtontoIn.setOpaque(true);
+        convertButtontoIn.setForeground(Color.WHITE);
+        convertButtontoIn.setBackground(new Color(60, 185, 163));
+
+        //logic code once button is clicked
+        // Tanay S
+        convertButtontoIn.addActionListener(e -> {
+            //if else statement to see if text field is blank (Gautam added)
+            if (userTextField.getText().equals("")) {
+                output.setText("Result");
+            } else {
+                //business logic code to convert
+                userInput = Double.parseDouble((userTextField.getText()));
+                double cmOutput = (userInput) / (2.54);
+                String cmStringOutput = String.valueOf(cmOutput);
+                output.setText(cmStringOutput);
+            }
+
+        });
+        //setting bounds for button
+        convertButtontoIn.setBounds(215, 250, 180, 67);
+        getContentPane().add(convertButtontoIn);
     }
 }
