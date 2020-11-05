@@ -7,6 +7,9 @@ import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.border.MatteBorder;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 public class BeatMakerUI extends JFrame{
     private JButton kick1Button;
