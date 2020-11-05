@@ -204,7 +204,6 @@ public class ConverterUI extends JFrame {
                 int userInputInt = (int)userInput;
                 String hexOutput = Integer.toHexString(userInputInt);
                 String hexStringOutput = String.valueOf(hexOutput);
-
                 output.setText(hexStringOutput);
             }
 
@@ -289,8 +288,9 @@ public class ConverterUI extends JFrame {
             } else {
                 //business logic code to convert
                 userInput = Double.parseDouble((userTextField.getText()));
-                double cmOutput = (userInput) * (2.54);
-                String cmStringOutput = String.valueOf(cmOutput);
+                convertOp = CONVERT.CENTIMETERS;
+                ConverterModel finalAnswer = new ConverterModel(userInput, convertOp);
+                String cmStringOutput = String.valueOf(finalAnswer.converterModelAnswer);
                 output.setText(cmStringOutput);
             }
 
@@ -331,8 +331,9 @@ public class ConverterUI extends JFrame {
             } else {
                 //business logic code to convert
                 userInput = Double.parseDouble((userTextField.getText()));
-                double cmOutput = (userInput) / (2.54);
-                String cmStringOutput = String.valueOf(cmOutput);
+                convertOp = CONVERT.CMINCHES;
+                ConverterModel finalAnswer = new ConverterModel(userInput, convertOp);
+                String cmStringOutput = String.valueOf(finalAnswer.converterModelAnswer);
                 output.setText(cmStringOutput);
             }
 
