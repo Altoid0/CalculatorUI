@@ -10,6 +10,11 @@ import javax.swing.border.MatteBorder;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import java.io.File;
+import java.io.IOException;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import  java.io.*;
 
 public class BeatMakerUI extends JFrame{
     private JButton kick1Button;
@@ -143,6 +148,9 @@ public class BeatMakerUI extends JFrame{
     private JButton snare30Button;
     private JButton snare31Button;
     private JButton snare32Button;
+    String kick;
+
+
 
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
@@ -155,11 +163,36 @@ public class BeatMakerUI extends JFrame{
         });
     }
 
+    public class playKick {
+        Clip clip;
+
+        public void setFile(String soundFileName) {
+            try {
+                File file = new File(soundFileName);
+                AudioInputStream sound = AudioSystem.getAudioInputStream(file);
+                clip = AudioSystem.getClip();
+                clip.open(sound);
+
+            }
+            catch(Exception e) {
+
+            }
+        }
+
+        public void play() {
+           clip.setFramePosition(0);
+           clip.start();
+        }
+    }
+
     public BeatMakerUI() {
         getContentPane().setBackground(new Color(51, 49, 47));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 2000, 550);
         getContentPane().setLayout(null);
+
+        kick = "./assets/audio_files/kick.wav";
+
 
         //setting up kick buttons
 
@@ -172,6 +205,7 @@ public class BeatMakerUI extends JFrame{
         kick1Button.setBounds(25, 10, 50, 50);
         getContentPane().add(kick1Button);
         kick1Button.addActionListener(e -> {
+
             kick1Button.setBackground(new Color(203, 9, 33, 255));
 
 
