@@ -3,6 +3,9 @@ package view;
 
 //import java.awt.*;
 
+import control.ConverterControl;
+import model.ConverterModel;
+
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -18,6 +21,8 @@ import java.awt.event.FocusListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.lang.*;
+import control.ConverterControl.CONVERT;
+import model.ConverterModel;
 
 //starts frame
 
@@ -36,6 +41,7 @@ public class ConverterUI extends JFrame {
     private double userInput;
     private String userInputString;
     private double farConvertNumber = 1.8;
+    private CONVERT convertOp;
 
 //runs frame
     public static void main(String[] args) {
@@ -108,9 +114,9 @@ public class ConverterUI extends JFrame {
             } else {
                 //business logic code to convert
                 userInput = Double.parseDouble((userTextField.getText()));
-                double fOutput = userInput*farConvertNumber + 32;
-                String faOutput = String.valueOf(fOutput);
-
+                convertOp = CONVERT.FAHRENHEIT;
+                ConverterModel finalAnswer = new ConverterModel(userInput, convertOp);
+                String faOutput = String.valueOf(finalAnswer.converterModelAnswer);
                 output.setText(faOutput);
             }
 
@@ -151,9 +157,9 @@ public class ConverterUI extends JFrame {
             } else {
                 //business logic code to convert
                 userInput = Double.parseDouble((userTextField.getText()));
-                double inOutput = userInput*(12);
-                String inStringOutput = String.valueOf(inOutput);
-
+                convertOp = CONVERT.FTINCHES;
+                ConverterModel finalAnswer = new ConverterModel(userInput, convertOp);
+                String inStringOutput = String.valueOf(finalAnswer.converterModelAnswer);
                 output.setText(inStringOutput);
             }
 
@@ -198,7 +204,6 @@ public class ConverterUI extends JFrame {
                 int userInputInt = (int)userInput;
                 String hexOutput = Integer.toHexString(userInputInt);
                 String hexStringOutput = String.valueOf(hexOutput);
-
                 output.setText(hexStringOutput);
             }
 
@@ -283,8 +288,9 @@ public class ConverterUI extends JFrame {
             } else {
                 //business logic code to convert
                 userInput = Double.parseDouble((userTextField.getText()));
-                double cmOutput = (userInput) * (2.54);
-                String cmStringOutput = String.valueOf(cmOutput);
+                convertOp = CONVERT.CENTIMETERS;
+                ConverterModel finalAnswer = new ConverterModel(userInput, convertOp);
+                String cmStringOutput = String.valueOf(finalAnswer.converterModelAnswer);
                 output.setText(cmStringOutput);
             }
 
@@ -325,8 +331,9 @@ public class ConverterUI extends JFrame {
             } else {
                 //business logic code to convert
                 userInput = Double.parseDouble((userTextField.getText()));
-                double cmOutput = (userInput) / (2.54);
-                String cmStringOutput = String.valueOf(cmOutput);
+                convertOp = CONVERT.CMINCHES;
+                ConverterModel finalAnswer = new ConverterModel(userInput, convertOp);
+                String cmStringOutput = String.valueOf(finalAnswer.converterModelAnswer);
                 output.setText(cmStringOutput);
             }
 

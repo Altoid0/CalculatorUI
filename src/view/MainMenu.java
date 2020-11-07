@@ -32,7 +32,7 @@ public class MainMenu extends JFrame {
     // Tanay and Dhruv S
     public MainMenu() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 600, 500);
+        setBounds(100, 100, 700, 550);
 
 
 
