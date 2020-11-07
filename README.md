@@ -25,7 +25,7 @@ Prerequisites:
 You will need to pull out code down and view it in IntelliJ. Follow this document for instructions on how to run out code: [Code Instructions](https://docs.google.com/document/d/1yZMZCIHzIUx_sKJ-uUAaJKMJXkuuMoprFAGDZGbFyNE/edit?usp=sharing)
 
 ## Calculator Functions
-![](https://github.com/Altoid0/CalculatorUI/blob/master/assets/Flowchart_Week9.png)
+![](https://github.com/Altoid0/CalculatorUI/blob/master/assets/FlowchartNew_Week9.png)
 We have created multiple sub-projects in our CalculatorUI: 
 - Scientific Calculator   
 A basic scientific calculator with basic math, log, exponents, and modulus operators  
