@@ -5,29 +5,34 @@ package view;
 //import java.awt.*;
 
 import com.ibm.dtfj.java.JavaLocation;
+import control.PhysicsSolv;
 
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
+
+import model.SolverModel;
+import control.PhysicsSolv;
 
 
 public class SolverUI extends JFrame {
     //var setup
     private JPanel mainPanel, subPanel1, subPanel2, subPanel3;
-    private JTextField celsiusTextField;
-    private JLabel celsiusLabel;
-    private JButton convertButtonFar;
-    private JLabel fahrenheitLabel;
-    private double celsiusInput;
-    private JButton solver;
-    private JButton Kinematic1;
-    private JButton Kinematic2;
-    private JButton Kinematic3;
-    private JButton Kinematic4;
+    private JLabel answer;
+    private JRadioButton vibtn;
+    private JRadioButton vfbtn;
+    private JRadioButton accbtn;
+    private PhysicsSolv.KINOPERATOR kinematicvar;
+    private String kinematicvarstr;
+    private double vi;
+    private double vf;
+    private double acc;
+    private double time;
+    private double dist;
+    private String missingparam;
+    private String solveranswer;
+
 
 
     //runs frame
@@ -41,6 +46,18 @@ public class SolverUI extends JFrame {
             }
         });
     }
+
+    private void saveValueofSolveVar(PhysicsSolv.KINOPERATOR kinop ) { //method to store which variable is being solved for
+        kinematicvar = kinop; }
+
+    private void calculateAnswer() {
+        SolverModel solvanswer = new SolverModel(vi, vf, acc, time, dist, kinematicvar, missingparam );
+        solveranswer = String.valueOf(solvanswer.kinematicanswermodel);
+        System.out.println(solveranswer);
+    }
+
+
+
 
     //components of application
     // Dhruv K
@@ -69,217 +86,307 @@ public class SolverUI extends JFrame {
         mainPanel.add(subPanel3);
 
         add(mainPanel);
-        setSize(700, 500);
+        setSize(1000, 500);
 
 // Adding Radio Buttons for Panel 1
         //Adding velocity initial Radio Button
-        JRadioButton vi = new JRadioButton("Initial Velocity");
-        vi.setPreferredSize(new Dimension(200,50));
-        vi.setBackground(new Color(21, 52,80));
-        vi.setFont(new Font("Impact", Font.PLAIN, 20));
-        vi.setForeground(Color.white);
-        subPanel1.add(vi);
+        JRadioButton vibtn = new JRadioButton("Initial Velocity");
+        vibtn.setPreferredSize(new Dimension(200,50));
+        vibtn.setBackground(new Color(21, 52,80));
+        vibtn.setFont(new Font("Impact", Font.PLAIN, 20));
+        vibtn.setForeground(Color.white);
+        subPanel1.add(vibtn);
+
+        vibtn.addActionListener(e -> {
+            saveValueofSolveVar(PhysicsSolv.KINOPERATOR.VI);
+            kinematicvarstr = "Initial Velocity";
+        });
 
         //Adding velocity final Radio Button
-        JRadioButton vf = new JRadioButton("Final Velocity");
-        vf.setPreferredSize(new Dimension(200,50));
-        vf.setBackground(new Color(21, 52,80));
-        vf.setFont(new Font("Impact", Font.PLAIN, 20));
-        vf.setForeground(Color.white);
-        subPanel1.add(vf);
+        JRadioButton vfbtn = new JRadioButton("Final Velocity");
+        vfbtn.setPreferredSize(new Dimension(200,50));
+        vfbtn.setBackground(new Color(21, 52,80));
+        vfbtn.setFont(new Font("Impact", Font.PLAIN, 20));
+        vfbtn.setForeground(Color.white);
+        subPanel1.add(vfbtn);
+
+        vfbtn.addActionListener(e -> {
+            saveValueofSolveVar(PhysicsSolv.KINOPERATOR.VF);
+            kinematicvarstr = "Final Velocity";
+        });
 
         //Adding acceleration Radio Button
-        JRadioButton acc = new JRadioButton("Acceleration");
-        acc.setPreferredSize(new Dimension(200,50));
-        acc.setBackground(new Color(21, 52,80));
-        acc.setFont(new Font("Impact", Font.PLAIN, 20));
-        acc.setForeground(Color.white);
-        subPanel1.add(acc);
+        JRadioButton accbtn = new JRadioButton("Acceleration");
+        accbtn.setPreferredSize(new Dimension(200,50));
+        accbtn.setBackground(new Color(21, 52,80));
+        accbtn.setFont(new Font("Impact", Font.PLAIN, 20));
+        accbtn.setForeground(Color.white);
+        subPanel1.add(accbtn);
+
+        accbtn.addActionListener(e -> {
+            saveValueofSolveVar(PhysicsSolv.KINOPERATOR.ACC);
+            kinematicvarstr = "Acceleration";
+        });
 
         //Adding time Radio Button
-        JRadioButton t = new JRadioButton("Time");
-        t.setPreferredSize(new Dimension(200,50));
-        t.setBackground(new Color(21, 52,80));
-        t.setFont(new Font("Impact", Font.PLAIN, 20));
-        t.setForeground(Color.white);
-        subPanel1.add(t);
+        JRadioButton tbtn = new JRadioButton("Time");
+        tbtn.setPreferredSize(new Dimension(200,50));
+        tbtn.setBackground(new Color(21, 52,80));
+        tbtn.setFont(new Font("Impact", Font.PLAIN, 20));
+        tbtn.setForeground(Color.white);
+        subPanel1.add(tbtn);
+
+        tbtn.addActionListener(e -> {
+            saveValueofSolveVar(PhysicsSolv.KINOPERATOR.TIME);
+            kinematicvarstr = "Time";
+        });
 
         //Adding Distance Radio Button
-        JRadioButton dist = new JRadioButton("Distance");
-        dist.setPreferredSize(new Dimension(200,50));
-        dist.setBackground(new Color(21, 52,80));
-        dist.setFont(new Font("Impact", Font.PLAIN, 20));
-        dist.setForeground(Color.white);
-        subPanel1.add(dist);
+        JRadioButton distbtn = new JRadioButton("Distance");
+        distbtn.setPreferredSize(new Dimension(200,50));
+        distbtn.setBackground(new Color(21, 52,80));
+        distbtn.setFont(new Font("Impact", Font.PLAIN, 20));
+        distbtn.setForeground(Color.white);
+        subPanel1.add(distbtn);
 
+        distbtn.addActionListener(e -> {
+            saveValueofSolveVar(PhysicsSolv.KINOPERATOR.DIST);
+            kinematicvarstr = "Distance";
+        });
+
+        // Initializing Button Group
+        ButtonGroup variables = new ButtonGroup();
+        variables.add(vibtn);
+        variables.add(vfbtn);
+        variables.add(accbtn);
+        variables.add(tbtn);
+        variables.add(distbtn);
 
 // Adding text values to Panel 2
 
         // Initial Velocity
         JLabel vilbl = new JLabel("Initial Velocity");
         vilbl.setFont(new Font("Impact", Font.PLAIN, 20));
-        vilbl.setHorizontalAlignment(SwingConstants.RIGHT);
+        vilbl.setHorizontalAlignment(SwingConstants.LEFT);
         vilbl.setForeground(Color.WHITE);
         subPanel2.add(vilbl);
 
-        JTextField vitxt = new JTextField("");
-        vitxt.setPreferredSize(new Dimension(100, 30));
+        JTextField vitxt = new JTextField();
+        vitxt.setPreferredSize(new Dimension(170, 30));
         vitxt.setBackground(new Color(68, 114, 148));
         vitxt.setFont(new Font("Impact", Font.PLAIN, 20));
         vitxt.setForeground(Color.white);
-        vitxt.setHorizontalAlignment(SwingConstants.LEFT);
+        vitxt.setHorizontalAlignment(SwingConstants.RIGHT);
         subPanel2.add(vitxt);
+
+
+        vibtn.addActionListener(e -> {
+            vitxt.setEnabled(false);
+            vitxt.setBackground(new Color(110, 110, 149));
+        });
 
 
 
         // Final Velocity
-        JTextField vftxt = new JTextField("");
-        vftxt.setPreferredSize(new Dimension(100, 30));
-        vftxt.setBackground(new Color(68, 114, 148));
-        vftxt.setFont(new Font("Impact", Font.PLAIN, 20));
-        vftxt.setForeground(Color.white);
-        vftxt.setHorizontalAlignment(SwingConstants.RIGHT);
-        subPanel2.add(vftxt);
-
         JLabel vflbl = new JLabel("Final Velocity");
         vflbl.setFont(new Font("Impact", Font.PLAIN, 20));
         vflbl.setHorizontalAlignment(SwingConstants.LEFT);
         vflbl.setForeground(Color.WHITE);
         subPanel2.add(vflbl);
 
+        JTextField vftxt = new JTextField("");
+        vftxt.setPreferredSize(new Dimension(170, 30));
+        vftxt.setBackground(new Color(68, 114, 148));
+        vftxt.setFont(new Font("Impact", Font.PLAIN, 20));
+        vftxt.setForeground(Color.white);
+        vftxt.setHorizontalAlignment(SwingConstants.RIGHT);
+        subPanel2.add(vftxt);
+
+
+        vfbtn.addActionListener(e -> {
+            vftxt.setEnabled(false);
+            vftxt.setBackground(new Color(110, 110, 149));
+        });
 
 
 
 
         // Acceleration
-        JTextField acctxt = new JTextField("");
-        acctxt.setPreferredSize(new Dimension(100, 30));
-        acctxt.setBackground(new Color(68, 114, 148));
-        acctxt.setFont(new Font("Impact", Font.PLAIN, 20));
-        acctxt.setForeground(Color.white);
-        acctxt.setHorizontalAlignment(SwingConstants.RIGHT);
-        subPanel2.add(acctxt);
-
         JLabel acclbl = new JLabel("Acceleration");
         acclbl.setFont(new Font("Impact", Font.PLAIN, 20));
         acclbl.setHorizontalAlignment(SwingConstants.LEFT);
         acclbl.setForeground(Color.WHITE);
         subPanel2.add(acclbl);
 
+        JTextField acctxt = new JTextField("");
+        acctxt.setPreferredSize(new Dimension(170, 30));
+        acctxt.setBackground(new Color(68, 114, 148));
+        acctxt.setFont(new Font("Impact", Font.PLAIN, 20));
+        acctxt.setForeground(Color.white);
+        acctxt.setHorizontalAlignment(SwingConstants.RIGHT);
+        subPanel2.add(acctxt);
+
+
+        accbtn.addActionListener(e -> {
+            acctxt.setEnabled(false);
+            acctxt.setBackground(new Color(110, 110, 149));
+        });
 
 
 
 
         // Time
+        JLabel tlbl = new JLabel("Time          ");
+        tlbl.setFont(new Font("Impact", Font.PLAIN, 20));
+        tlbl.setHorizontalAlignment(SwingConstants.LEFT);
+        tlbl.setForeground(Color.WHITE);
+        subPanel2.add(tlbl);
+
         JTextField ttxt = new JTextField("");
-        ttxt.setPreferredSize(new Dimension(100, 30));
+        ttxt.setPreferredSize(new Dimension(170, 30));
         ttxt.setBackground(new Color(68, 114, 148));
         ttxt.setFont(new Font("Impact", Font.PLAIN, 20));
         ttxt.setForeground(Color.white);
         ttxt.setHorizontalAlignment(SwingConstants.RIGHT);
         subPanel2.add(ttxt);
 
-        JLabel tlbl = new JLabel("Time");
-        tlbl.setFont(new Font("Impact", Font.PLAIN, 20));
-        tlbl.setHorizontalAlignment(SwingConstants.LEFT);
-        tlbl.setForeground(Color.WHITE);
-        subPanel2.add(tlbl);
+        tbtn.addActionListener(e -> {
+            ttxt.setEnabled(false);
+            ttxt.setBackground(new Color(110, 110, 149));
+        });
 
 
 
+        JLabel distlbl = new JLabel("Distance     ");
+        distlbl.setFont(new Font("Impact", Font.PLAIN, 20));
+        distlbl.setHorizontalAlignment(SwingConstants.LEFT);
+        distlbl.setForeground(Color.WHITE);
+        subPanel2.add(distlbl);
 
-
-        // Distance
+        // Distance text field
         JTextField disttxt = new JTextField("");
-        disttxt.setPreferredSize(new Dimension(100, 30));
+        disttxt.setPreferredSize(new Dimension(170, 30));
         disttxt.setBackground(new Color(68, 114, 148));
         disttxt.setFont(new Font("Impact", Font.PLAIN, 20));
         disttxt.setForeground(Color.white);
         disttxt.setHorizontalAlignment(SwingConstants.RIGHT);
         subPanel2.add(disttxt);
 
-        JLabel distlbl = new JLabel("Distance");
-        distlbl.setFont(new Font("Impact", Font.PLAIN, 20));
-        distlbl.setHorizontalAlignment(SwingConstants.LEFT);
-        distlbl.setForeground(Color.WHITE);
-        subPanel2.add(distlbl);
+
+        distbtn.addActionListener(e -> {
+            disttxt.setEnabled(false);
+            disttxt.setBackground(new Color(110, 110, 149));
+        });
 
 
 
-
-//        //properties for output label
-//        // Dhruv K
-//        JLabel output = new JLabel("Answer");
-//        output.setFont(new Font("Impact", Font.PLAIN, 60));
-//        output.setHorizontalAlignment(SwingConstants.CENTER);
-//        output.setBounds(25, 300, 377, 67);
-//        output.setForeground(Color.WHITE);
-//        getContentPane().add(output);
-
-        /* celsiusTextField.addFocusListener(new FocusListener() {
-            @Override
-            public void focusGained(FocusEvent e) {
-                celsiusTextField.setText("");
+        // Adding Solution Button to solve for the value
+        JButton solve = new JButton("Solve");
+        solve.setPreferredSize(new Dimension(170, 30));
+        solve.setBackground(new Color(68, 114, 148));
+        solve.setFont(new Font("Impact", Font.PLAIN, 20));
+        solve.setForeground(Color.white);
+        solve.addActionListener(e -> {
+            if (vitxt.getText().isEmpty()) {
+                missingparam = "Initial Velocity";
+                vi = 0.0;
             }
-
-            @Override
-            public void focusLost(FocusEvent e) {
-                celsiusTextField.setFont(new Font("Impact", Font.PLAIN, 30));
-                celsiusTextField.setText("Enter your email here:");
+            else {
+                vi = Double.parseDouble(vitxt.getText());
             }
-        }); */
+            if (vftxt.getText().isEmpty()) {
+                missingparam = "Final Velocity";
+                vf = 0.0;
+            }
+            else {
+                vf = Double.parseDouble(vftxt.getText());
+            }
+            if (acctxt.getText().isEmpty()) {
+                missingparam = "Acceleration";
+                acc = 0.0;
+            }
+            else {
+                acc = Double.parseDouble(acctxt.getText());
+            }
+            if (ttxt.getText().isEmpty()) {
+                missingparam = "Time";
+                time = 0.0;
+            }
+            else {
+                time = Double.parseDouble(ttxt.getText());
+            }
+            if (disttxt.getText().isEmpty()) {
+                missingparam = "Displacement";
+                dist = 0.0;
+            }
+            else {
+                dist = Double.parseDouble(disttxt.getText());
+            }
+            calculateAnswer();
 
-        //properties for instructions label
-//        // Dhruv K
-//        JLabel instrux = new JLabel("Select a Kinematic formula to solve with");
-//        instrux.setFont(new Font("Impact", Font.PLAIN, 18));
-//        instrux.setHorizontalAlignment(SwingConstants.CENTER);
-//        instrux.setForeground(Color.WHITE);
-//        instrux.setBounds(18, 100, 377, 67);
-//        getContentPane().add(instrux);
-//
-//        //creating button
-//        JButton convertButtonFar = new JButton("Solve");
-//
-//        //color change once button is clicked
-//        // Dhruv K
-//        convertButtonFar.addMouseListener(new MouseAdapter() {
-//            @Override
-//            public void mousePressed(MouseEvent e) {
-//                convertButtonFar.setBackground(Color.PINK);
-//            }
-//            @Override
-//            public void mouseReleased(MouseEvent e) {
-//                convertButtonFar.setBackground(new Color(60, 174, 163));
-//            }
-//        });
-//
-//        //properties for button
-//        // Dhruv K
-//        convertButtonFar.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
-//        convertButtonFar.setFont(new Font("Impact", Font.PLAIN, 48));
-//        convertButtonFar.setOpaque(true);
-//        convertButtonFar.setForeground(Color.WHITE);
-//        convertButtonFar.setBackground(new Color(60, 174, 163));
-//
-//        //logic code once button is clicked
-//        // Dhruv K
-//        convertButtonFar.addActionListener(e -> {
-//            //if else statement to see if text field is blank (Gautam added)
-//            if (celsiusTextField.getText().equals("")) {
-//                output.setText("Result");
-//            } else {
-//                //business logic code to convert
-//                celsiusInput = Double.parseDouble((celsiusTextField.getText()));
-//                double fOutput = celsiusInput*(9/5)+32;
-//                String faOutput = String.valueOf(fOutput);
-//
-//                output.setText(faOutput);
-//            }
-//
-//        });
-////        //setting bounds for button
-//        convertButtonFar.setBounds(25, 185, 175, 67);
-//        getContentPane().add(convertButtonFar);
+            System.out.println(missingparam);
+            System.out.println(vi);
+            System.out.println(vf);
+            System.out.println(time);
+            System.out.println(acc);
+            System.out.println(dist);
+        });
+        subPanel2.add(solve);
+
+
+
+
+        // Adding Button to Reset the buttons and text fields
+        JButton Reset = new JButton("Reset");
+        Reset.setPreferredSize(new Dimension(170, 30));
+        Reset.setBackground(new Color(68, 114, 148));
+        Reset.setFont(new Font("Impact", Font.PLAIN, 20));
+        Reset.setForeground(Color.white);
+        Reset.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                variables.clearSelection();
+                vitxt.setText("");
+                vitxt.setEnabled(true);
+                vitxt.setBackground(new Color(68, 114, 148));
+                vftxt.setText("");
+                vftxt.setEnabled(true);
+                vftxt.setBackground(new Color(68, 114, 148));
+                acctxt.setText("");
+                acctxt.setEnabled(true);
+                acctxt.setBackground(new Color(68, 114, 148));
+                disttxt.setText("");
+                disttxt.setEnabled(true);
+                disttxt.setBackground(new Color(68, 114, 148));
+                ttxt.setText("");
+                ttxt.setEnabled(true);
+                ttxt.setBackground(new Color(68, 114, 148));
+            }
+        });
+        subPanel2.add(Reset);
+
+
+
+
+
+
+// Adding Solution Text field for Panel 3
+        JLabel soln = new JLabel(kinematicvarstr);
+        soln.setPreferredSize(new Dimension(170, 30));
+        soln.setFont(new Font("Impact", Font.PLAIN, 20));
+        soln.setHorizontalAlignment(SwingConstants.CENTER);
+        soln.setForeground(Color.BLACK);
+        subPanel3.add(soln);
+
+        JLabel answer = new JLabel();
+        answer.setPreferredSize(new Dimension(170, 30));
+        answer.setFont(new Font("Impact", Font.PLAIN, 20));
+        answer.setHorizontalAlignment(SwingConstants.CENTER);
+        answer.setForeground(Color.BLACK);
+        answer.setText(String.valueOf(solveranswer));
+        subPanel3.add(answer);
+
+
+
     }
 }

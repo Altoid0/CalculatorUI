@@ -1,40 +1,17 @@
 // Dhruv K
 package model;
+import control.PhysicsSolv.KINOPERATOR;
 // Declare Solver Model class
 public class SolverModel {
-    // initializing variables to solve with
-    private double veli;
-    private double velf;
-    private double acc;
-    private double time;
-    private double deltax;
+    public double kinematicanswermodel;
 
-    public SolverModel() { //constructor default sets
-        veli = 0.0;
-        velf = 0.0;
-        acc = 0.0;
-        time = 0.0;
-        deltax = 0.0;
+    public SolverModel() {
     }
-
-    // setters for all the variables
-    public void setVeli(double value) { // set velocity initial
-        veli = value;
-    }
-
-    public void setVelf(double value) { // set velocity final
-        velf = value;
-    }
-
-    public void setAcc(double value) { // set acceleration
-        acc = value;
-    }
-
-    public void setTime(double value) { // set time
-        time = value;
-    }
-
-    public void setDeltax(double value) { // set deltax
-        deltax = value;
+    // Constructor with arguments, passes to control function
+    // Dhruv Kanetkar
+    public SolverModel(double vi, double vf, double acc, double time, double dist, KINOPERATOR kinematicvar, String missingparam) {
+        // Set var equal to the return value of the control function
+        // Eventually the goal is to make control into a class and again create the object here to access the answer variable
+        this.kinematicanswermodel = control.PhysicsSolv.solveIt(vi, vf, acc, time, dist, kinematicvar, missingparam);
     }
 }
