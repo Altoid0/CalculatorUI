@@ -67,14 +67,14 @@ public class MainMenu extends JFrame {
         });
         mnSuite.add(mntmCalculator);
 
-        // Created Temperature Converter Selector Button that creates new ConverterUI object
+        // Created Converter Selector Button that creates new ConverterUI object
         // Dhruv K
-        JMenuItem mntmTempConv = new JMenuItem("Temperature Convertor");
-        mntmTempConv.addActionListener(e -> {
+        JMenuItem mntmConv = new JMenuItem("Converter");
+        mntmConv.addActionListener(e -> {
             ConverterUI frame = new ConverterUI();
             frame.setVisible(true);
         });
-        mnSuite.add(mntmTempConv);
+        mnSuite.add(mntmConv);
 
         JMenuItem mntmDerivativeCalc = new JMenuItem("Derivative Calculator");
         mntmDerivativeCalc.addActionListener(e -> {
