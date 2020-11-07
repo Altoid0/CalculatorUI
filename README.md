@@ -33,9 +33,9 @@ A basic scientific calculator with basic math, log, exponents, and modulus opera
 A calculator that calculates the derivative using power rule    
 - Physics Converter   
 A physics converter that uses the kinematic equations and solves for the missing variable   
-- Converter
+- Converter  
 A converter for cryptography, units, and temperature  
-- Free Text Calculator
+- Free Text Calculator  
 A free text calculator totally in the terminal. Has all the same functions as the GUI calculator  
 
 ### Scientific Calculator
@@ -88,9 +88,9 @@ These are all the sub-projects that we are working on currently:
 ## Future Features to Add
 Throughout the course of his project, we want to add more and more features to make the best calculator possible.  
 Here is a list of all the new features we want to add:    
-1. Encoding Converter (Enhance MVC)
-    Goal: Complete Week 10
-    Assignment: Tanay
-2. Beat Maker (Music)
-    Goal: Complete Week 10
-    Assignment: Dhruv S
+1. Encoding Converter (Enhance MVC)  
+    Goal: Complete Week 10  
+    Assignment: Tanay  
+2. Beat Maker (Music)  
+    Goal: Complete Week 10  
+    Assignment: Dhruv S  
