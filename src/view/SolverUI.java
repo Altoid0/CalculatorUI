@@ -4,7 +4,7 @@ package view;
 
 //import java.awt.*;
 
-import com.ibm.dtfj.java.JavaLocation;
+//import com.ibm.dtfj.java.JavaLocation;
 import control.PhysicsSolv;
 
 import java.awt.*;
@@ -32,6 +32,8 @@ public class SolverUI extends JFrame {
     private double dist;
     private String missingparam;
     private String solveranswer;
+    private String testString;
+    private String answerString;
 
 
 
@@ -53,15 +55,24 @@ public class SolverUI extends JFrame {
     private void calculateAnswer() {
         SolverModel solvanswer = new SolverModel(vi, vf, acc, time, dist, kinematicvar, missingparam );
         solveranswer = String.valueOf(solvanswer.kinematicanswermodel);
-        System.out.println(solveranswer);
+        testString = String.valueOf(solvanswer);
     }
-
-
-
 
     //components of application
     // Dhruv K
     public SolverUI() {
+        JLabel soln = new JLabel(kinematicvarstr);
+        soln.setPreferredSize(new Dimension(170, 30));
+        soln.setFont(new Font("Impact", Font.PLAIN, 20));
+        soln.setHorizontalAlignment(SwingConstants.CENTER);
+        soln.setForeground(Color.WHITE);
+
+        JLabel answer = new JLabel();
+        answer.setPreferredSize(new Dimension(170, 30));
+        answer.setFont(new Font("Impact", Font.PLAIN, 20));
+        answer.setHorizontalAlignment(SwingConstants.CENTER);
+        answer.setForeground(Color.WHITE);
+
         //Setting up the Main Panel
         setTitle("Physics Solver");
         mainPanel = new JPanel();
@@ -322,14 +333,11 @@ public class SolverUI extends JFrame {
             else {
                 dist = Double.parseDouble(disttxt.getText());
             }
-            calculateAnswer();
 
-            System.out.println(missingparam);
-            System.out.println(vi);
-            System.out.println(vf);
-            System.out.println(time);
-            System.out.println(acc);
-            System.out.println(dist);
+            SolverModel solved = new SolverModel(vi, vf, acc, time, dist, kinematicvar, missingparam);
+            String answerString = String.valueOf(solved.kinematicanswermodel);
+            answer.setText(answerString);
+
         });
         subPanel2.add(solve);
 
@@ -364,28 +372,14 @@ public class SolverUI extends JFrame {
             }
         });
         subPanel2.add(Reset);
-
+        subPanel3.add(soln);
+        subPanel3.add(answer);
 
 
 
 
 
 // Adding Solution Text field for Panel 3
-        JLabel soln = new JLabel(kinematicvarstr);
-        soln.setPreferredSize(new Dimension(170, 30));
-        soln.setFont(new Font("Impact", Font.PLAIN, 20));
-        soln.setHorizontalAlignment(SwingConstants.CENTER);
-        soln.setForeground(Color.BLACK);
-        subPanel3.add(soln);
-
-        JLabel answer = new JLabel();
-        answer.setPreferredSize(new Dimension(170, 30));
-        answer.setFont(new Font("Impact", Font.PLAIN, 20));
-        answer.setHorizontalAlignment(SwingConstants.CENTER);
-        answer.setForeground(Color.BLACK);
-        answer.setText(String.valueOf(solveranswer));
-        subPanel3.add(answer);
-
 
 
     }
