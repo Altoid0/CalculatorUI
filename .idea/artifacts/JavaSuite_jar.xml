@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="JavaSuite:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/JavaSuite_jar</output-path>
-    <root id="archive" name="JavaSuite">
+    <root id="archive" name="JavaSuite.jar">
       <element id="module-output" name="test" />
     </root>
   </artifact>
