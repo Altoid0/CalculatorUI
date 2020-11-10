@@ -15,11 +15,14 @@ import java.io.IOException;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import  java.io.*;
+import javax.sound.sampled.*;
 
 public class BeatMakerUI extends JFrame{
 
-String kick;
-    SoundEffect se = new SoundEffect();
+    AudioFormat audioFormat;
+    AudioInputStream audioInputStream;
+    SourceDataLine sourceDataLine;
+    boolean stopPlayback = false;
 
 
     private JButton kick1Button;
@@ -167,29 +170,53 @@ String kick;
             }
         });
     }
-    public class SoundEffect {
+    private void playAudio() {
+        try{
+            File kick = new File("C:\\Users\\dhruv\\Desktop\\test\\assets\\audio_files\\kick.wav");
+            audioInputStream = AudioSystem.
+                    getAudioInputStream(kick);
+            audioFormat = audioInputStream.getFormat();
+            System.out.println(audioFormat);
 
-        Clip clip;
+            DataLine.Info dataLineInfo =
+                    new DataLine.Info(
+                            SourceDataLine.class,
+                            audioFormat);
 
-        public void setFile(String soundFileName){
+            sourceDataLine =
+                    (SourceDataLine)AudioSystem.getLine(
+                            dataLineInfo);
 
+
+            new PlayThread().start();
+        }catch (Exception e) {
+            e.printStackTrace();
+            System.exit(0);
+        }
+    }
+
+    class PlayThread extends Thread{
+        byte tempBuffer[] = new byte[10000];
+
+        public void run(){
             try{
-                File file = new File(soundFileName);
-                AudioInputStream sound = AudioSystem.getAudioInputStream(file);
-                clip = AudioSystem.getClip();
-                clip.open(sound);
-            }
-            catch(Exception e){
+                sourceDataLine.open(audioFormat);
+                sourceDataLine.start();
 
-            }
-        }
 
-        public void play(){
 
-            clip.setFramePosition(0);
-            clip.start();
-        }
 
+                sourceDataLine.drain();
+                sourceDataLine.close();
+
+                //Prepare to playback another file
+
+                stopPlayback = false;
+            }catch (Exception e) {
+                e.printStackTrace();
+                System.exit(0);
+            }//end catch
+        }//end run
     }
 
 
@@ -202,7 +229,7 @@ String kick;
         setBounds(100, 100, 2000, 550);
         getContentPane().setLayout(null);
 
-        kick = ".\\assets\\audio_files\\kick.wav";
+
 
 
         //setting up kick buttons
@@ -218,9 +245,7 @@ String kick;
         kick1Button.addActionListener(e -> {
 
             kick1Button.setBackground(new Color(203, 9, 33, 255));
-            se.setFile(kick);
-            se.play();
-
+            playAudio();
 
 
         });
