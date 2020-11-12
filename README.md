@@ -12,7 +12,7 @@ Dhruv Sengupta | [@DaHippoBear](https://github.com/DaHippoBear) | [Tanay & Dhruv
 ## Week 10 - Pair Share Mastery
 Contributor | Journal Link
 ----------- | ---------------------------------------------
-Dhruv S & Tanay  | [@Altoid0](https://github.com/Altoid0) | [Tanay & Dhruv S Journal](https://docs.google.com/document/d/1NovjIb66AfVZmsY1ekfZDwx8gZQbw61LDGB21bSS2QE/edit?usp=sharing)
+Dhruv S & Tanay  | [Tanay & Dhruv S Journal](https://docs.google.com/document/d/1NovjIb66AfVZmsY1ekfZDwx8gZQbw61LDGB21bSS2QE/edit?usp=sharing)
 Dhruv K & Gautam |  [Gautam & Dhruv K Journal](https://docs.google.com/document/d/1osVup_6HvE5lw1XQpkgtVvuoJ3UzDAUcrKXfVWIOTCY/edit?usp=sharing) 
   
 
