@@ -9,13 +9,12 @@ Tanay Shah | [@Altoid0](https://github.com/Altoid0) | [Tanay & Dhruv S Journal](
 Dhruv Kanetkar | [@DhruvK0](https://github.com/DhruvK0) | [Gautam & Dhruv K Journal](https://docs.google.com/document/d/1osVup_6HvE5lw1XQpkgtVvuoJ3UzDAUcrKXfVWIOTCY/edit?usp=sharing)
 Dhruv Sengupta | [@DaHippoBear](https://github.com/DaHippoBear) | [Tanay & Dhruv S Journal](https://docs.google.com/document/d/1NovjIb66AfVZmsY1ekfZDwx8gZQbw61LDGB21bSS2QE/edit?usp=sharing)
 
-## Week 9 - Individual Grades from the Videos  
-Contributor | Video Link
+## Week 10 - Pair Share Mastery
+Contributor | Journal Link
 ----------- | ---------------------------------------------
-Gautam Gupta  | 
-Dhruv Kanetkar |   
-Tanay Shah | 
-Dhruv Sengupta |   
+Dhruv S & Tanay  | [Tanay & Dhruv S Journal](https://docs.google.com/document/d/1NovjIb66AfVZmsY1ekfZDwx8gZQbw61LDGB21bSS2QE/edit?usp=sharing)
+Dhruv K & Gautam |  [Gautam & Dhruv K Journal](https://docs.google.com/document/d/1osVup_6HvE5lw1XQpkgtVvuoJ3UzDAUcrKXfVWIOTCY/edit?usp=sharing) 
+  
 
 ## How to run our code?
 Prerequisites: 
@@ -25,7 +24,7 @@ Prerequisites:
 You will need to pull out code down and view it in IntelliJ. Follow this document for instructions on how to run out code: [Code Instructions](https://docs.google.com/document/d/1yZMZCIHzIUx_sKJ-uUAaJKMJXkuuMoprFAGDZGbFyNE/edit?usp=sharing)
 
 ## Calculator Functions
-![](https://github.com/Altoid0/CalculatorUI/blob/master/assets/FlowchartNew_Week9.png)
+![](https://github.com/Altoid0/CalculatorUI/blob/master/assets/HierarchyFlowchart_V3.png)
 We have created multiple sub-projects in our CalculatorUI: 
 - Scientific Calculator   
 A basic scientific calculator with basic math, log, exponents, and modulus operators  
