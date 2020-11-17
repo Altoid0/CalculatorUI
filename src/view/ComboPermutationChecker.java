@@ -7,7 +7,7 @@ import java.util.Stack;
 
 
 
-public class CombinationChecker {
+public class ComboPermutationChecker {
 
 
     public static void main(String[] args) {
@@ -41,6 +41,12 @@ public class CombinationChecker {
         }
         else {
             System.out.println("No, the Combinations are not equal");
+        }
+        if (((a/b/c)+a) == ((x/y/z)+x)) {
+            System.out.println("Yes, they are Permutations of one another");
+        }
+        else {
+            System.out.println("No, they are not Permutations of one another");
         }
 
 
