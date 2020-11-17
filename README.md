@@ -9,16 +9,12 @@ Tanay Shah | [@Altoid0](https://github.com/Altoid0) | [Tanay & Dhruv S Journal](
 Dhruv Kanetkar | [@DhruvK0](https://github.com/DhruvK0) | [Gautam & Dhruv K Journal](https://docs.google.com/document/d/1osVup_6HvE5lw1XQpkgtVvuoJ3UzDAUcrKXfVWIOTCY/edit?usp=sharing)
 Dhruv Sengupta | [@DaHippoBear](https://github.com/DaHippoBear) | [Tanay & Dhruv S Journal](https://docs.google.com/document/d/1NovjIb66AfVZmsY1ekfZDwx8gZQbw61LDGB21bSS2QE/edit?usp=sharing)
 
-## Week 9 
-#### Individual Grades from the Videos  
-
-## Week 8 - Scrum Master Grades
-Contributor | Reasoning (Code Snippets Labelled in Project)
+## Week 10 - Pair Share Mastery
+Contributor | Journal Link
 ----------- | ---------------------------------------------
-Gautam Gupta  | 
-Dhruv Kanetkar |   
-Tanay Shah | 
-Dhruv Sengupta |   
+Dhruv S & Tanay  | [Tanay & Dhruv S Journal](https://docs.google.com/document/d/1NovjIb66AfVZmsY1ekfZDwx8gZQbw61LDGB21bSS2QE/edit?usp=sharing)
+Dhruv K & Gautam |  [Gautam & Dhruv K Journal](https://docs.google.com/document/d/1osVup_6HvE5lw1XQpkgtVvuoJ3UzDAUcrKXfVWIOTCY/edit?usp=sharing) 
+  
 
 ## How to run our code?
 Prerequisites: 
@@ -27,18 +23,19 @@ Prerequisites:
 
 You will need to pull out code down and view it in IntelliJ. Follow this document for instructions on how to run out code: [Code Instructions](https://docs.google.com/document/d/1yZMZCIHzIUx_sKJ-uUAaJKMJXkuuMoprFAGDZGbFyNE/edit?usp=sharing)
 
-
 ## Calculator Functions
-![](https://github.com/Altoid0/CalculatorUI/blob/master/assets/HierarchyFlowchartNew.png)
-We have created two main sub-projects in our CalculatorUI: 
-- Scientific Calculator  
-A basic scientific calculator with basic math, log, exponents, and modulus operators
-- Temperature Converter  
-A temperature converter that converts celsius to fahrenheit  
-- Derivative Calculator
-A calculator that calculates the derivative using power rule  
-- Physics Converter
-A physics converter that uses the kinematic equations and solves for the missing variable
+![](https://github.com/Altoid0/CalculatorUI/blob/master/assets/HierarchyFlowchart_V3.png)
+We have created multiple sub-projects in our CalculatorUI: 
+- Scientific Calculator   
+A basic scientific calculator with basic math, log, exponents, and modulus operators  
+- Derivative Calculator   
+A calculator that calculates the derivative using power rule    
+- Physics Converter   
+A physics converter that uses the kinematic equations and solves for the missing variable   
+- Converter  
+A converter for cryptography, units, and temperature  
+- Free Text Calculator  
+A free text calculator totally in the terminal. Has all the same functions as the GUI calculator  
 
 ### Scientific Calculator
 Function Name | Description | How it is done
@@ -81,27 +78,18 @@ Function Name | Description | How it is done
 Kinematic Equation Solver | Solve for a physics variable from the Big 4 Kinematic equations based on what variable the user wants to solve for | The user selects what variable they want to solve for and then enter in all the variables except for the one variable that is missing from each equation. Based on what variable is missing, the code chooses to use an equation. The answer is then shown in the Answer field. 
 
 #### Physics Demo
-
-
-### Encoding Converter
-Function Name | Description | How it is done
-------------- | ----------- | --------------
-Binary --> Hex | 
+![](https://github.com/Altoid0/CalculatorUI/blob/master/assets/PhysicsDemo.gif)   
 
 ## Code in Progress
 These are all the sub-projects that we are working on currently:  
-1. Physics Solver  
-   We are working on debugging the physics solver and making sure all the functions and buttons are working effectively. 
+- All of the work for this week is finished and we are all caught up for next week!
 
 ## Future Features to Add
 Throughout the course of his project, we want to add more and more features to make the best calculator possible.  
 Here is a list of all the new features we want to add:    
-1. Encoding Converter (Enhance MVC)
-    Goal: Complete Week 10
-    Assignment: Tanay
-2. Physics Converter (Troubleshooting)
-    Goal: Complete Week 10
-    Assignment: Everyone
-3. Beat Maker (Music)
-    Goal: Complete Week 10
-    Assignment: Dhruv S
+1. Encoding Converter (Enhance MVC)  
+    Goal: Complete Week 10  
+    Assignment: Tanay  
+2. Beat Maker (Music)  
+    Goal: Complete Week 10  
+    Assignment: Dhruv S  
