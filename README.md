@@ -81,7 +81,7 @@ Kinematic Equation Solver | Solve for a physics variable from the Big 4 Kinemati
  Combo Permutation Checker | Check if the second inputted queue is a permutation and/or combination of the first inputted queue | The user inputs in both queue's via the scanner and then the code checks if the sum of the numbers are the same and if the numbers divided by themselves are the same to see if they are combinations and/or permutations. 
 
 #### Permutations & Combinations Demo
-![](https://github.com/Altoid0/CalculatorUI/blob/master/permutations.gif)
+![](https://github.com/Altoid0/CalculatorUI/blob/master/assets/permutations.gif)
 
 ## Code in Progress
 These are all the sub-projects that we are working on currently:   
