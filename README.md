@@ -9,13 +9,6 @@ Tanay Shah | [@Altoid0](https://github.com/Altoid0) | [Tanay & Dhruv S Journal](
 Dhruv Kanetkar | [@DhruvK0](https://github.com/DhruvK0) | [Gautam & Dhruv K Journal](https://docs.google.com/document/d/1osVup_6HvE5lw1XQpkgtVvuoJ3UzDAUcrKXfVWIOTCY/edit?usp=sharing)
 Dhruv Sengupta | [@DaHippoBear](https://github.com/DaHippoBear) | [Tanay & Dhruv S Journal](https://docs.google.com/document/d/1NovjIb66AfVZmsY1ekfZDwx8gZQbw61LDGB21bSS2QE/edit?usp=sharing)
 
-## Week 10 - Pair Share Mastery
-Contributor | Journal Link
------------ | ---------------------------------------------
-Dhruv S & Tanay  | [Tanay & Dhruv S Journal](https://docs.google.com/document/d/1NovjIb66AfVZmsY1ekfZDwx8gZQbw61LDGB21bSS2QE/edit?usp=sharing)
-Dhruv K & Gautam |  [Gautam & Dhruv K Journal](https://docs.google.com/document/d/1osVup_6HvE5lw1XQpkgtVvuoJ3UzDAUcrKXfVWIOTCY/edit?usp=sharing) 
-  
-
 ## How to run our code?
 Prerequisites: 
 - [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html)
@@ -35,7 +28,9 @@ A physics converter that uses the kinematic equations and solves for the missing
 - Converter  
 A converter for cryptography, units, and temperature  
 - Free Text Calculator  
-A free text calculator totally in the terminal. Has all the same functions as the GUI calculator  
+A free text calculator totally in the terminal. Has all the same functions as the GUI calculator   
+- Permutation/Combination Checker
+A checker that checks if two inputted number series are permutations or combinations  
 
 ### Scientific Calculator
 Function Name | Description | How it is done
@@ -78,18 +73,21 @@ Function Name | Description | How it is done
 Kinematic Equation Solver | Solve for a physics variable from the Big 4 Kinematic equations based on what variable the user wants to solve for | The user selects what variable they want to solve for and then enter in all the variables except for the one variable that is missing from each equation. Based on what variable is missing, the code chooses to use an equation. The answer is then shown in the Answer field. 
 
 #### Physics Demo
-![](https://github.com/Altoid0/CalculatorUI/blob/master/assets/PhysicsDemo.gif)   
+![](https://github.com/Altoid0/CalculatorUI/blob/master/assets/PhysicsDemo.gif)  
+
+### Permutations & Combinations
+ Function Name | Description | How it is done
+ ------------- | ----------- | --------------
+ Combo Permutation Checker | Check if the second inputted queue is a permutation and/or combination of the first inputted queue | The user inputs in both queue's via the scanner and then the code checks if the sum of the numbers are the same and if the numbers divided by themselves are the same to see if they are combinations and/or permutations. 
+
+#### Permutations & Combinations Demo
+![](https://github.com/Altoid0/CalculatorUI/blob/master/permutations.gif)
 
 ## Code in Progress
-These are all the sub-projects that we are working on currently:  
-- All of the work for this week is finished and we are all caught up for next week!
+These are all the sub-projects that we are working on currently:   
+- All work is complete
 
 ## Future Features to Add
 Throughout the course of his project, we want to add more and more features to make the best calculator possible.  
 Here is a list of all the new features we want to add:    
-1. Encoding Converter (Enhance MVC)  
-    Goal: Complete Week 10  
-    Assignment: Tanay  
-2. Beat Maker (Music)  
-    Goal: Complete Week 10  
-    Assignment: Dhruv S  
+- Our project is complete so there no more future features to add.
