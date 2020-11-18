@@ -37,17 +37,17 @@ public class ComboPermutationChecker {
 
         int n = 3;
         if (checkStackCombination(input, output, n)) {
-            System.out.println("Yes, the Combinations are equal");
+            System.out.println("Yes, the lists are permutations of each other");
         }
         else {
-            System.out.println("No, the Combinations are not equal");
+            System.out.println("No, the lists are not permutations of each other");
         }
-        if (((a/b/c)+a) == ((x/y/z)+x)) {
-            System.out.println("Yes, they are Permutations of one another");
-        }
-        else {
-            System.out.println("No, they are not Permutations of one another");
-        }
+//        if (((a/b/c)+a) == ((x/y/z)+x)) {
+//            System.out.println("Yes, they are Permutations of one another");
+//        }
+//        else {
+//            System.out.println("No, they are not Permutations of one another");
+//        }
 
 
 
